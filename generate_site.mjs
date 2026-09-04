@@ -791,34 +791,297 @@ window.ACTIVE_FILTERED_PROMPTS = window.ALL_PROMPTS;
 fs.writeFileSync('browse.html', browseHtml, 'utf8');
 console.log('Saved browse.html (modern interactive prompt browser).');
 
-// ─── 4. Generate index.html (Home page with local links) ───
-let homeHtml = otherPages.home.html;
-homeHtml = homeHtml.replace(/https:\/\/soniprompts\.com\/assets\//g, 'assets/');
-homeHtml = homeHtml.replace(/https:\/\/soniprompts\.com\/uploads\//g, 'uploads/');
-homeHtml = homeHtml.replace(/https:\/\/soniprompts\.com\/browse\.php/g, 'browse.html');
-homeHtml = homeHtml.replace(/https:\/\/soniprompts\.com\/community\.php/g, 'community.html');
-homeHtml = homeHtml.replace(/https:\/\/soniprompts\.com\/pricing\.php/g, 'pricing.html');
-homeHtml = homeHtml.replace(/https:\/\/soniprompts\.com\/contact\.php/g, 'contact.html');
-homeHtml = homeHtml.replace(/https:\/\/soniprompts\.com\/privacy\.php/g, 'privacy.html');
-homeHtml = homeHtml.replace(/https:\/\/soniprompts\.com\/terms\.php/g, 'terms.html');
-homeHtml = homeHtml.replace(/https:\/\/soniprompts\.com\/refund\.php/g, 'refund.html');
-homeHtml = homeHtml.replace(/https:\/\/soniprompts\.com\/prompt\.php\?id=(\d+)/g, 'prompts/$1.html');
-homeHtml = homeHtml.replace(/https:\/\/soniprompts\.com\//g, 'index.html');
-homeHtml = homeHtml.replace(/<a href="[^"]*account\.php">My Account<\/a>\s*<a href="[^"]*logout\.php" class="nav-btn">Logout<\/a>/g, '<a href="pricing.html">Join Community</a>');
+// ─── 4. Generate index.html (Modern High-Converting Creator Landing Page) ───
+const p281 = prompts.find(p => p.id === 281);
+const sandboxPromptExcerpt = p281 ? p281.promptText : '';
+const curatedIds = [281, 280, 279, 278];
+const curatedPrompts = curatedIds.map(id => prompts.find(p => p.id === id)).filter(Boolean);
 
-// Replace header in index.html
-homeHtml = homeHtml.replace(/<header class="site-header">[\s\S]*?<\/header>/, commonHeaderHtml(''));
-// Replace footer in index.html
-homeHtml = homeHtml.replace(/<footer class="site-footer">[\s\S]*?<\/footer>/, commonFooterHtml(''));
-homeHtml = homeHtml.replace(/NavPrompts/g, 'YeaPrompts');
+const curatedCardsHtml = curatedPrompts.map(p => `
+        <article class="pcard">
+            <div class="pcard-thumb">
+                <a href="prompts/${p.id}.html" class="pcard-thumb-link">
+                    <img src="${p.thumbnail}" alt="${escapeHtml(p.title)}" loading="lazy" decoding="async" width="660" height="371">
+                </a>
+                <span class="badge-top-left card-badge card-badge-free">Free</span>
+                <span class="badge-top-right card-badge card-badge-id">#${p.id}</span>
+                <div class="card-quick-actions">
+                    <a href="prompts/${p.id}.html" class="quick-action-btn">View Master Prompt</a>
+                </div>
+            </div>
+            <div class="pcard-body">
+                <div class="pcard-meta-row">
+                    <span class="pcard-cat">${escapeHtml(p.category || 'General')}</span>
+                    <span class="pcard-date">Master Engine</span>
+                </div>
+                <h3 class="pcard-title">
+                    <a href="prompts/${p.id}.html">${escapeHtml(p.title)}</a>
+                </h3>
+            </div>
+            <div class="pcard-foot">
+                <a href="prompts/${p.id}.html" class="btn btn-outline" style="width:100%;text-align:center;">Open Prompt →</a>
+            </div>
+        </article>
+`).join('\n');
 
-// Ensure data-theme="dark" attribute
-if (!homeHtml.includes('data-theme')) {
-  homeHtml = homeHtml.replace('<html lang="en">', '<html lang="en" data-theme="dark"><script>(function(){var t=localStorage.getItem("yeaprompts_theme")||localStorage.getItem("navprompts_theme")||"dark";document.documentElement.setAttribute("data-theme",t);})();</script>');
-}
+const taglineRaw = "VIRAL HOOKS ENGINEERED FOR SEEDANCE, KLING, AND VEO. BUILT FOR CREATORS WHO REFUSE TO BLEND IN.";
+const taglineWordsHtml = taglineRaw.split(' ').map(word => {
+    const isAccent = word.includes('SEEDANCE') || word.includes('KLING') || word.includes('VEO');
+    const accentClass = isAccent ? ' accent-word' : '';
+    return `<span class="tagline-word${accentClass}">${word}</span>`;
+}).join(' ');
 
-fs.writeFileSync('index.html', homeHtml, 'utf8');
-console.log('Saved index.html (Home).');
+const modernIndexHtml = `<!DOCTYPE html>
+<html lang="en" data-theme="dark"><script>(function(){var t=localStorage.getItem("yeaprompts_theme")||localStorage.getItem("navprompts_theme")||"dark";document.documentElement.setAttribute("data-theme",t);})();</script>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YeaPrompts. Viral AI Video Prompts Library</title>
+<meta name="description" content="Viral AI video prompts for Facebook Reels, YouTube Shorts, Instagram, and TikTok. Works with Seedance, Kling, Veo, and any AI video generator.">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<meta property="og:title" content="YeaPrompts. Viral AI Video Prompts Library">
+<meta property="og:description" content="Viral AI video prompts for Reels, Shorts, and TikTok. Built for creators.">
+<meta property="og:image" content="assets/img/cover.jpg">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/css/style.css?v=22">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" media="print" onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"></noscript>
+</head>
+<body>
+
+${commonHeaderHtml('')}
+
+<main>
+
+    <!-- 1. Hero Section -->
+    <section class="hero-section">
+        <div class="hero-pill-badge">
+            <span class="hero-pill-dot"></span>
+            279 Tested Prompts Online
+        </div>
+        <h1 class="hero-title">
+            Viral AI video prompts <span class="hero-title-gradient">engineered for massive reach</span>
+        </h1>
+        <p class="hero-sub">
+            Stop guessing video prompts. Copy tested master instructions calibrated for Seedance, Kling, and Veo. Ready to drop into your AI video generator.
+        </p>
+        <div class="hero-actions">
+            <a href="browse.html" class="hero-btn-primary">
+                Explore all prompts
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+            <a href="#sandbox" class="hero-btn-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                Open live sandbox
+            </a>
+        </div>
+        <div class="hero-stats-row">
+            <div class="hero-stat-card">
+                <div class="hero-stat-num">279</div>
+                <div class="hero-stat-label">Curated prompts</div>
+            </div>
+            <div class="hero-stat-card">
+                <div class="hero-stat-num">3</div>
+                <div class="hero-stat-label">AI engines</div>
+            </div>
+            <div class="hero-stat-card">
+                <div class="hero-stat-num">100%</div>
+                <div class="hero-stat-label">Free access</div>
+            </div>
+            <div class="hero-stat-card">
+                <div class="hero-stat-num">1-Click</div>
+                <div class="hero-stat-label">Instant copy</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Mandatory B11 Tagline Scroll Reveal Section -->
+    <section class="tagline-reveal-section">
+        <div class="tagline-lead">Built for high retention</div>
+        <div class="tagline-reveal-text">
+            ${taglineWordsHtml}
+        </div>
+    </section>
+
+    <!-- 3. Interactive Live Prompt Sandbox -->
+    <section class="sandbox-section" id="sandbox">
+        <div class="section-head">
+            <span class="section-badge">Interactive preview</span>
+            <h2 class="section-title">Test a master prompt</h2>
+            <p class="section-desc">Inspect how a full master prompt is structured with camera directions, motion physics, and cinematic lighting.</p>
+        </div>
+
+        <div class="sandbox-card">
+            <div class="sandbox-media">
+                <img src="${p281 ? p281.thumbnail : 'assets/img/cover.jpg'}" alt="${p281 ? escapeHtml(p281.title) : 'Demo'}" loading="lazy" decoding="async">
+                <span class="sandbox-media-badge">Prompt #${p281 ? p281.id : 281} Demo</span>
+            </div>
+            <div class="sandbox-details">
+                <div>
+                    <div class="sandbox-header-meta">
+                        <div class="sandbox-tags">
+                            <span class="sandbox-tag">Seedance</span>
+                            <span class="sandbox-tag">Kling</span>
+                            <span class="sandbox-tag">Veo</span>
+                            <span class="sandbox-tag">30s Format</span>
+                        </div>
+                        <span class="card-badge card-badge-free">Free</span>
+                    </div>
+                    <h3 class="sandbox-prompt-title">${p281 ? escapeHtml(p281.title) : ''}</h3>
+                </div>
+
+                <div class="sandbox-code-wrap">
+                    <div class="sandbox-code-header">
+                        <span>Master Prompt Instructions</span>
+                        <span>Prompt #${p281 ? p281.id : 281}</span>
+                    </div>
+                    <pre class="sandbox-code-box" id="sandbox-prompt-code"><code>${escapeHtml(sandboxPromptExcerpt)}</code></pre>
+                </div>
+
+                <div class="sandbox-actions">
+                    <button type="button" class="sandbox-copy-btn" id="sandbox-copy-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        Copy full master prompt
+                    </button>
+                    <a href="prompts/${p281 ? p281.id : 281}.html" class="sandbox-view-btn">
+                        View page
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Curated Viral Prompts Grid (4 cards in 1 row) -->
+    <section class="curated-section">
+        <div class="section-head">
+            <span class="section-badge">Curated selection</span>
+            <h2 class="section-title">Top performing prompts</h2>
+            <p class="section-desc">Hand-picked prompts that drive strong viewer retention across Shorts, Reels, and TikTok.</p>
+        </div>
+
+        <div class="grid">
+            ${curatedCardsHtml}
+        </div>
+
+        <div class="curated-foot-action">
+            <a href="browse.html" class="curated-all-btn">
+                Browse all 279 prompts
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- 5. Creator Workflow Section -->
+    <section class="workflow-section">
+        <div class="section-head">
+            <span class="section-badge">Simple pipeline</span>
+            <h2 class="section-title">How YeaPrompts works</h2>
+            <p class="section-desc">Three steps from prompt discovery to published viral video.</p>
+        </div>
+
+        <div class="workflow-grid">
+            <div class="workflow-card">
+                <div class="workflow-step-num">1</div>
+                <div class="workflow-card-title">Discover and filter</div>
+                <div class="workflow-card-desc">Search by topic, style, or duration to find hooks suited to your audience niche.</div>
+            </div>
+            <div class="workflow-card">
+                <div class="workflow-step-num">2</div>
+                <div class="workflow-card-title">Copy with one click</div>
+                <div class="workflow-card-desc">Grab production-ready prompts packed with motion dynamics and continuity constraints.</div>
+            </div>
+            <div class="workflow-card">
+                <div class="workflow-step-num">3</div>
+                <div class="workflow-card-title">Generate and publish</div>
+                <div class="workflow-card-desc">Paste into Kling, Seedance, or Veo, render your clip, and post to Reels, Shorts, or TikTok.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Creator FAQ Accordion -->
+    <section class="faq-section">
+        <div class="section-head">
+            <span class="section-badge">Frequently asked</span>
+            <h2 class="section-title">Questions and answers</h2>
+            <p class="section-desc">Common questions about using YeaPrompts master instructions.</p>
+        </div>
+
+        <div class="faq-list">
+            <details class="faq-item" open>
+                <summary class="faq-summary">
+                    <span>What AI video tools do these prompts work with?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-content">
+                    <p>YeaPrompts master instructions work with Seedance, Kling, Google Veo, Runway Gen-3, Luma Dream Machine, and Midjourney. The structural constraints maintain stable character geometry and realistic physics across platforms.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    <span>Are all prompts free to use?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-content">
+                    <p>Yes. Every master prompt in our public catalog is accessible with zero cost. You can copy, modify, and use them for commercial or personal video production.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    <span>How do master prompts keep motion consistent?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-content">
+                    <p>Each master prompt specifies fixed camera axes, lighting sources, subject velocity, and transition anchors. This prevents AI engines from morphing faces or distorting objects between keyframes.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    <span>Can I customize the characters or setting in a prompt?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-content">
+                    <p>Yes. You can swap out character descriptions, clothing, environments, or lighting cues while keeping the prompt pacing and camera direction syntax intact.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    <span>How often is the prompt library updated?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-content">
+                    <p>New tested prompts are added regularly, focusing on emerging short-form video trends and algorithm-favored hooks.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    <span>Where can I share my generated videos and get feedback?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-content">
+                    <p>Visit our Social Corner to share links, post your results, and connect with fellow creators in the community.</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+</main>
+
+${commonFooterHtml('')}
+<script src="assets/js/main.js?v=7"></script>
+</body>
+</html>
+`;
+
+fs.writeFileSync('index.html', modernIndexHtml, 'utf8');
+console.log('Saved index.html (Modern High-Converting Creator Landing Page).');
 
 // ─── 5. Generate pricing.html, contact.html, privacy.html, terms.html, refund.html ───
 const staticPages = ['pricing', 'contact', 'privacy', 'terms', 'refund'];
