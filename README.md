@@ -1,6 +1,10 @@
-# YeaPrompts local replica
+# YeaPrompts
 
-A local replica of the YeaPrompts website (soniprompts.com). All 279 prompt pages, prompt texts, and 390 media assets are stored locally for offline browsing and fast reference.
+A complete replica and prompt library for YeaPrompts. All 279 prompt pages, master prompt instructions, and 385 media assets are stored and accessible both online and offline.
+
+Live online site: https://yeamin-sheikh.github.io/yeaprompts/
+
+Browse prompts online: https://yeamin-sheikh.github.io/yeaprompts/browse.html
 
 ## Features
 
