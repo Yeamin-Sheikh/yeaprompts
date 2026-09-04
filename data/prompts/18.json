@@ -1,0 +1,13 @@
+{
+  "id": 18,
+  "title": "Image Prompt",
+  "category": "Art & Animation",
+  "thumbnail": "uploads/f0f7ade47df228d337600847.png",
+  "badge": "",
+  "href": "prompts/18.html",
+  "updated": "Updated 13 Aug 2026",
+  "galleryImages": [],
+  "promptText": "Create a natural professional model reference sheet based strictly on the uploaded character image.\n\nUse the uploaded image as the MAIN IDENTITY LOCK. Keep the same face, same facial structure, same body proportions, same skin tone, same hairstyle, same hair color, same natural expression, same age appearance, and same overall realism style. Do not beautify, redesign, stylize, or change the person.\n\nCreate a clean realistic studio reference sheet on a plain light-gray or white background.\n\nLayout:\nTop row: 4 full-body standing views:\n1. front view\n2. left side profile\n3. right side profile\n4. back view\n\nBottom row: 3 close-up portrait views:\n1. front face portrait\n2. left profile face portrait\n3. right profile face portrait\n\nCharacter pose:\nRelaxed natural A-pose, arms slightly away from body, neutral calm expression, natural standing posture, bare feet or simple clean footwear if visible in the reference.\n\nVisual style:\nUltra-realistic RAW DSLR photography, natural studio lighting, soft shadows, sharp facial details, realistic skin texture, realistic hair strands, accurate anatomy, clean silhouette, consistent scale, consistent head height, even spacing between panels, print-ready character model sheet.\n\nImportant:\nMaintain perfect identity consistency across all 7 panels. Same person in every view. No extra people, no text, no logo, no watermark, no cartoon, no CGI, no fashion pose, no dramatic lighting, no exaggerated beauty retouching.\n\n\nKeep the same identity and same reference sheet layout, but change the outfit to: [YOUR OUTFIT DESCRIPTION].",
+  "promptLen": 1574,
+  "status": 200
+}

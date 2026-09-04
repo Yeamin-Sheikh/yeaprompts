@@ -1,0 +1,24 @@
+﻿# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.class
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System and temporary logs
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local IDE and environment files
+.vscode/
+.idea/
+*.swp
+*.swo
+.env
+.env.local
