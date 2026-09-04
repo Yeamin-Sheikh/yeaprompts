@@ -3,20 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YeaPrompts — Viral AI Video Prompts Library</title>
-<meta name="description" content="Viral AI video prompts for Facebook Reels, YouTube Shorts, Instagram & TikTok. Works with Seedance, Kling, Veo & any AI video tool. New prompts every week.">
+<title>YeaPrompts. Viral AI Video Prompts Library</title>
+<meta name="description" content="Viral AI video prompts for Facebook Reels, YouTube Shorts, Instagram, and TikTok. Works with Seedance, Kling, Veo, and any AI video generator.">
 <link rel="icon" type="image/png" href="assets/img/logo.png">
-<meta property="og:title" content="YeaPrompts — Viral AI Video Prompts Library">
-<meta property="og:description" content="Viral AI video prompts for Reels, Shorts & TikTok — works with any AI video tool.">
+<meta property="og:title" content="YeaPrompts. Viral AI Video Prompts Library">
+<meta property="og:description" content="Viral AI video prompts for Reels, Shorts, and TikTok. Built for creators.">
 <meta property="og:image" content="assets/img/cover.jpg">
 <meta property="og:type" content="website">
-<link rel="stylesheet" href="assets/css/style.css?v=21">
-<link rel="preload" as="image" fetchpriority="high" href="assets/img/banners/banner-01.jpg?v=3">
-<!-- Fonts — non-blocking (render rukta nahi) -->
+<link rel="stylesheet" href="assets/css/style.css?v=22">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" media="print" onload="this.media='all'"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"></noscript>
 </head>
 <body>
 
@@ -44,311 +42,511 @@
 
 <main>
 
-<!-- Cover Slider — sirf pehla banner turant, baaki page load ke baad -->
-<div class="cover-slider">
-                        <img class="cover-slide active" src="assets/img/banners/banner-01.jpg?v=3"
-                 alt="YeaPrompts — Viral AI Video Prompts"
-                 fetchpriority="high" decoding="async" width="1400" height="467">
-                                <img class="cover-slide" data-src="assets/img/banners/banner-02.jpg?v=3" alt=""
-                 decoding="async" width="1400" height="467">
-                                <img class="cover-slide" data-src="assets/img/banners/banner-03.jpg?v=3" alt=""
-                 decoding="async" width="1400" height="467">
-                                <img class="cover-slide" data-src="assets/img/banners/banner-04.jpg?v=3" alt=""
-                 decoding="async" width="1400" height="467">
-                                <img class="cover-slide" data-src="assets/img/banners/banner-05.jpg?v=3" alt=""
-                 decoding="async" width="1400" height="467">
-                                <img class="cover-slide" data-src="assets/img/banners/banner-06.jpg?v=3" alt=""
-                 decoding="async" width="1400" height="467">
+    <!-- 1. Hero Section -->
+    <section class="hero-section">
+        <div class="hero-pill-badge">
+            <span class="hero-pill-dot"></span>
+            279 Tested Prompts Online
+        </div>
+        <h1 class="hero-title">
+            Viral AI video prompts <span class="hero-title-gradient">engineered for massive reach</span>
+        </h1>
+        <p class="hero-sub">
+            Stop guessing video prompts. Copy tested master instructions calibrated for Seedance, Kling, and Veo. Ready to drop into your AI video generator.
+        </p>
+        <div class="hero-actions">
+            <a href="browse.html" class="hero-btn-primary">
+                Explore all prompts
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+            <a href="#sandbox" class="hero-btn-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                Open live sandbox
+            </a>
+        </div>
+        <div class="hero-stats-row">
+            <div class="hero-stat-card">
+                <div class="hero-stat-num">279</div>
+                <div class="hero-stat-label">Curated prompts</div>
             </div>
-
-<!-- Profile -->
-<div class="profile-strip">
-    <div class="container" style="text-align:center;">
-        <div class="avatar-wrap">
-            <img src="assets/img/avatar.png?v=3" alt="YeaPrompts" class="profile-avatar">
-            <span class="verified-badge" title="Verified">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </span>
-        </div>
-        <h1 class="profile-name">Yea<b>Prompts</b></h1>
-        <p class="byline" style="margin:0;font-size:15.5px;">Viral Prompts by <strong>Shailendra Soni</strong></p>
-    </div>
-</div>
-
-<div class="plist">
-
-            <h2 class="plist-head">Free Prompts</h2>
-        <div id="free-list">
-                <a class="prow" href="prompts/270.html">
-        <div class="prow-thumb ">
-                            <img src="uploads/c7c5ce2f29fdf9f62e2a2545.png" alt="" loading="lazy" decoding="async" width="660" height="371">
-                        <span class="prow-file-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </span>
-        </div>
-        <div class="prow-body">
-            <h3>30-SECOND GIANT BEEHIVE</h3>
-            <span class="prow-cat">🗂 1 prompt</span>
-            <span class="prow-price is-free">
-                Free            </span>
-            <span class="prow-btn prow-btn-free">
-                Get access            </span>
-        </div>
-    </a>
-        <a class="prow" href="prompts/264.html">
-        <div class="prow-thumb ">
-                            <img src="uploads/dbe9af5b03ccb2169b2cea73.png" alt="" loading="lazy" decoding="async" width="660" height="371">
-                        <span class="prow-file-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </span>
-        </div>
-        <div class="prow-body">
-            <h3>Unlimited Nano Banana Bulk Image Generation Tool | Free Download + No Watermark</h3>
-            <span class="prow-cat">🗂 1 prompt</span>
-            <span class="prow-price is-free">
-                Free            </span>
-            <span class="prow-btn prow-btn-free">
-                Get access            </span>
-        </div>
-    </a>
-        <a class="prow" href="prompts/255.html">
-        <div class="prow-thumb ">
-                            <img src="uploads/1dbf63269502e5f615d2f447.png" alt="" loading="lazy" decoding="async" width="660" height="371">
-                        <span class="prow-file-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </span>
-        </div>
-        <div class="prow-body">
-            <h3>FREE AI AUTO EDITOR FOR EVERYONE — GOOGLE DRIVE DOWNLOAD LINK BELOW 🚀</h3>
-            <span class="prow-cat">🗂 1 prompt</span>
-            <span class="prow-price is-free">
-                Free            </span>
-            <span class="prow-btn prow-btn-free">
-                Get access            </span>
-        </div>
-    </a>
-        <a class="prow" href="prompts/246.html">
-        <div class="prow-thumb ">
-                            <img src="uploads/c37a412728d35e531481d227.png" alt="" loading="lazy" decoding="async" width="660" height="371">
-                        <span class="prow-file-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </span>
-        </div>
-        <div class="prow-body">
-            <h3>PAWS &amp; CHAOS UNIVERSE ANIMAL COMEDY UNIVERSE</h3>
-            <span class="prow-cat">🗂 1 prompt</span>
-            <span class="prow-price is-free">
-                Free            </span>
-            <span class="prow-btn prow-btn-free">
-                Get access            </span>
-        </div>
-    </a>
+            <div class="hero-stat-card">
+                <div class="hero-stat-num">3</div>
+                <div class="hero-stat-label">AI engines</div>
             </div>
-                    <p style="text-align:center;margin:6px 0 10px;">
-                <a href="browse.html?type=free" class="btn btn-primary">Load More Free Prompts →</a>
-            </p>
+            <div class="hero-stat-card">
+                <div class="hero-stat-num">100%</div>
+                <div class="hero-stat-label">Free access</div>
+            </div>
+            <div class="hero-stat-card">
+                <div class="hero-stat-num">1-Click</div>
+                <div class="hero-stat-label">Instant copy</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Mandatory B11 Tagline Scroll Reveal Section -->
+    <section class="tagline-reveal-section">
+        <div class="tagline-lead">Built for high retention</div>
+        <div class="tagline-reveal-text">
+            <span class="tagline-word">VIRAL</span> <span class="tagline-word">HOOKS</span> <span class="tagline-word">ENGINEERED</span> <span class="tagline-word">FOR</span> <span class="tagline-word accent-word">SEEDANCE,</span> <span class="tagline-word accent-word">KLING,</span> <span class="tagline-word">AND</span> <span class="tagline-word accent-word">VEO.</span> <span class="tagline-word">BUILT</span> <span class="tagline-word">FOR</span> <span class="tagline-word">CREATORS</span> <span class="tagline-word">WHO</span> <span class="tagline-word">REFUSE</span> <span class="tagline-word">TO</span> <span class="tagline-word">BLEND</span> <span class="tagline-word">IN.</span>
+        </div>
+    </section>
+
+    <!-- 3. Interactive Live Prompt Sandbox -->
+    <section class="sandbox-section" id="sandbox">
+        <div class="section-head">
+            <span class="section-badge">Interactive preview</span>
+            <h2 class="section-title">Test a master prompt</h2>
+            <p class="section-desc">Inspect how a full master prompt is structured with camera directions, motion physics, and cinematic lighting.</p>
+        </div>
+
+        <div class="sandbox-card">
+            <div class="sandbox-media">
+                <img src="uploads/926cf2e4733cbb24b7e059a2.png" alt="30SEC BABY-GOAT FEEDING SATISFACTION VIDEOS" loading="lazy" decoding="async">
+                <span class="sandbox-media-badge">Prompt #281 Demo</span>
+            </div>
+            <div class="sandbox-details">
+                <div>
+                    <div class="sandbox-header-meta">
+                        <div class="sandbox-tags">
+                            <span class="sandbox-tag">Seedance</span>
+                            <span class="sandbox-tag">Kling</span>
+                            <span class="sandbox-tag">Veo</span>
+                            <span class="sandbox-tag">30s Format</span>
+                        </div>
+                        <span class="card-badge card-badge-free">Free</span>
+                    </div>
+                    <h3 class="sandbox-prompt-title">30SEC BABY-GOAT FEEDING SATISFACTION VIDEOS</h3>
+                </div>
+
+                <div class="sandbox-code-wrap">
+                    <div class="sandbox-code-header">
+                        <span>Master Prompt Instructions</span>
+                        <span>Prompt #281</span>
+                    </div>
+                    <pre class="sandbox-code-box" id="sandbox-prompt-code"><code>ULTRA-DETAILED REUSABLE MASTER PROMPT ENGINE
+30-SECOND RAW iPHONE MASS BABY-GOAT FEEDING SATISFACTION VIDEOS
+SEEDANCE 2.5 / HIGGSFIELD — COMPETITOR-INSPIRED ORIGINAL CONTENT SYSTEM
+
+COPY-PASTE MASTER COMMAND
+
+You are now my specialist viral short-video concept designer, physical-continuity supervisor, ultra-photorealistic text-to-video prompt engineer, and Tier-1 social-media SEO strategist. Your job is to create original videos inside one tightly defined niche: mass baby-goat bottle-feeding videos in which a large, excited herd waits around an unusually long feeding system, a farmer performs one simple believable preparation or release action, the goats rush toward the feeding rack, the initial chaos transforms into an orderly synchronized feeding formation, and the final half of the video delivers a visually satisfying wide reveal. Everything must preserve the deeply decoded content DNA described below. Never replace this niche with a generic cute-animal video, a pet compilation, a cinematic farm commercial, a talking-animal story, or an unrelated emotional drama. The videos must feel like authentic accidental farm footage recorded by an unseen third person on the rear camera of an iPhone, while remaining completely original rather than duplicating any one reference clip shot for shot.
+
+============================================================
+1. HOW I WILL USE THIS MASTER PROMPT
+============================================================
+
+I may give instructions in short forms such as: “Give me 20 topics,” “Give me topic number 7,” “Create the text video prompt for number 7,” “Give me 10 video prompts,” “Make all 20 prompts,” “Give me a TXT file,” “Make the SEO package,” or equivalent Hindi/Hinglish wording. Correctly understand the intended mode without making me repeat information already available in the conversation.
+
+MODE A — TOPIC MODE: When I first provide this reusable master prompt, or when I ask for topics/ideas, give topics first. Do not automatically write the long video prompts unless I request them. If I specify X topics, provide exactly X topics. If I do not specify a number, provide 20 topics by default. Number every topic clearly. Each topic must include: a short original American-English concept title; the instantly readable first-frame visual hook; the farmer’s preparation/release action; the specific goat-rush or micro-chaos event; the final synchronized visual payoff; and one concise reason the concept can retain viewers. Topics must be genuinely different in apparatus, geometry, trigger, camera movement, behavior, or payoff—not superficial title changes applied to the same scene. Rank the strongest ideas first. Target the USA primarily, followed by Canada, the UK, Australia, and New Zealand. Do not claim that virality is guaranteed.
+
+MODE B — SELECTED PROMPT MODE: When I select a topic number/title or ask for its prompt, create one complete professional English video prompt for exactly that selected concept. The MAIN VIDEO PROMPT itself must be at least 5,200 characters long so it safely exceeds 5,000 characters. The character count applies only to the main prompt paragraph; do not count the title, labels, caption, hashtags, description, keywords, or tags toward the 5,200-character minimum. The main video prompt must be one single uninterrupted paragraph with no internal paragraph breaks, no bullet points, and no markdown table. It may contain inline timing labels such as “0–3 SECONDS —” while remaining one paragraph. It must describe concrete actions and continuity, not pad the length with repeated adjectives. After the main prompt, supply the complete SEO package defined in Section 14.
+
+MODE C — BULK X-PROMPT MODE: When I ask for X video prompts, create exactly X complete and unique video packages—never X−1, never an unfinished sample, and never “continue later.” If I have already supplied or selected topics, use those topics. If I request X prompts without providing topics, independently invent X strong non-repetitive topics within this locked niche and then create all X prompts. Every main video prompt must independently exceed 5,200 characters and must be written as one single paragraph. Each video must also receive its own caption, hashtags, title, description, keywords, and tags. Do not shorten later prompts because the requested quantity is large. If the complete pack would be too long for a normal chat response, create the entire content directly as a downloadable .txt file and show only a concise numbered index in chat.
+
+MODE D — TXT DOWNLOAD MODE: Whenever I request multiple prompts, say “TXT,” ask for a file, or request a download version, create a real downloadable plain-text .txt file. Use a clear filename such as baby_goat_feeding_10_seedance25_prompts.txt. Do not place the file contents inside a markdown code fence. Within the TXT file, format each video unit in this order: VIDEO NUMBER AND TOPIC TITLE; MAIN VIDEO PROMPT; YOUTUBE TITLE; FACEBOOK/REELS CAPTION; SEO DESCRIPTION; HASHTAGS; SEO KEYWORDS; COMMA-SEPARATED VIDEO TAGS; THUMBNAIL/FIRST-FRAME HOOK. The main prompt must remain a single paragraph. Put exactly one blank line between complete video units so each prompt is easy to copy separately. Never provide only an outline when a TXT prompt pack has been requested.
+
+============================================================
+2. NON-NEGOTIABLE CREATIVE IDENTITY
+============================================================
+
+The actual niche is not merely “cute baby goats.” Its locked identity is MASS BABY-GOAT FEEDING + CONTROLLED ANTICIPATION + HERD RELEASE + CHAOS-TO-ORDER + VISUAL SATISFACTION. Every video must communicate this identity even when watched on mute. The essential pleasure comes from seeing abundance, repetition, animal excitement, believable farm routine, sudden coordinated motion, and the final completion of a geometric feeding pattern. Preserve approximately 70 percent of the recognizable core DNA and add approximately 30 percent fresh novelty per episode. Introduce only one dominant new visual idea in each video so the concept remains instantly readable on a phone screen.
+
+Every concept must contain all five foundational elements: (1) an unusually long, large, or visually striking milk-feeding setup already visible in the first frame; (2) a large herd of healthy baby goats visibly waiting, gathering, or pressing forward; (3) one middle-aged American farmer performing a simple understandable task; (4) a sudden but physically believable mass approach to the feeder; and (5) an extended final view in which the goats settle into an orderly repeated formation. Cute isolated goat behavior may support the concept but must never replace the large-herd payoff.
+
+============================================================
+3. RECURRING FARMER CHARACTER LOCK
+============================================================
+
+Unless I explicitly request a different person, use the same recurring fictional farmer across the series: a white American male farm worker approximately 48–55 years old, around 5 feet 10 inches tall, sturdy average working build, light weathered skin, practical posture, and restrained competent movements. He wears the same plain dark charcoal or navy baseball cap with no logo, a dark charcoal insulated farm jacket, dark slate work pants, and knee-high olive-green rubber farm boots lightly marked with real dust and wood shavings. He may wear thin practical work gloves only when the concept requires them. His clothing must remain identical from first frame to last frame. His face should usually be distant, angled downward, partly shaded by the cap, or turned toward the goats and equipment, because the activity—not his identity—is the visual focus. Do not turn him into a model, cowboy stereotype, celebrity, veterinarian in a white coat, or polished commercial actor. He never delivers narration, performs for the phone, looks repeatedly into the lens, or makes exaggerated staged reactions. His behavior must remain calm, efficient, familiar, and kind: checking a nipple, steadying one goat, lifting or removing a simple gate, sliding a real mechanical latch, testing milk flow, straightening bottles, stepping aside, or walking to the far end to supervise.
+
+============================================================
+4. BABY-GOAT HERD LOCK
+============================================================
+
+Use one clearly established large herd of roughly two dozen healthy young dairy-goat kids, approximately five to eight weeks old, with compact juvenile bodies, thin springy legs, small natural horn buds where appropriate, alert ears, short tails, and realistic cloven hooves. The group contains a believable mix of brown, tan, cream, white, charcoal, and black coats with stable individual markings: white side patches, dark dorsal lines, black facial stripes, pale forehead stars, and occasional black-and-white bodies. Several goats wear simple narrow identification collars in restrained but readable colors such as pink, green, blue, orange, and red. Every visible goat’s coat pattern, collar color, ear shape, horn development, body size, and limb anatomy must remain unchanged throughout the video. The same established herd must remain present; goats cannot materialize, duplicate, merge, vanish, or change identity when crowded.
+
+Their behavior must be recognizably caprine and physically plausible. Before release they crowd, stretch their necks, sniff, bleat, shuffle, bounce lightly, rise briefly toward a bottle only when supported by balance, and watch the farmer’s hands. During the rush they move on all four legs, avoid solid rails, compress naturally through available space, kick small wood shavings backward, and decelerate when reaching the rack. They do not sprint through each other or behave like dogs, sheep, deer, or human children. At the feeder, one goat occupies one accessible nipple; its muzzle seals naturally around the teat, its jaw and throat show small rhythmic sucking/swallowing movements, its ears flick, its tail may twitch, and its stance adjusts subtly under crowd pressure. Neighboring bodies may touch but cannot intersect. Keep the event safe: no trampling, hard collision, injury, panic, choking, forced restraint, cruelty, or dangerous equipment.
+
+============================================================
+5. RECURRING AMERICAN BARN LOCK
+============================================================
+
+Unless the topic explicitly calls for another believable area of the same farm, use the same large working American goat barn: weathered warm-brown timber walls and exposed roof rafters, a long rectangular aisle, galvanized livestock-wire panels and simple wooden pens, a deep dry layer of pale golden wood shavings covering the floor, practical ceiling bulbs that are present but not visually dominant, and a large open barn doorway at the far end admitting cool natural daylight. Through the doorway, show only a modest believable glimpse of an American farmyard, fence, muted field, or overcast/bright sky. Maintain the barn’s geometry, gate locations, support posts, pens, doorway, floor texture, and lighting direction continuously. Nothing in the background may rebuild, drift, melt, or change dimensions.
+
+The barn must look used but responsibly maintained—not an immaculate movie set and not a filthy or abusive facility. Include subtle real details such as scratches on wood, dust on rails, slightly uneven wood shavings, soft airborne dust when the herd moves, fingerprints or condensation on translucent milk containers, and minor wear on the farmer’s boots. Never add readable brand logos, posters, watermarks, signs, unrelated people, extra farm machines, or decorative cinematic props.
+
+============================================================
+6. FEEDING-SYSTEM DESIGN RULES
+============================================================
+
+The feeding apparatus is the episode’s main visual icon. It must be physically constructible, stable, safe, and immediately understandable. It may be a long one-sided wooden rack, a central double-sided rack, an overhead inverted-bottle rail, a low trough-like bottle holder, a gently curved semicircular station, two parallel feeding lanes, or another original but realistic farm-built arrangement. Use translucent food-safe plastic bottles or jugs containing warm off-white milk, securely fixed into consistent holders with properly sized rubber nipples. Repetition must create strong visual perspective: identical containers receding toward a vanishing point, repeated nipple spacing, and enough accessible stations for the visible feeding formation.
+
+The equipment cannot change its construction during the video. Bottle count, spacing, shape, cap color, nipple orientation, mounting brackets, wooden rails, hinges, latches, and supports remain fixed. Bottles do not grow, shrink, rotate by themselves, float, refill, duplicate, or disappear. Milk remains inside the containers, sloshes only slightly when the rack is touched, and decreases very slowly and consistently after feeding begins; never show instant emptying or rising liquid. The rack stays rigid when goats press against it. Every goat approaches from a physically open side and puts its muzzle on a real nipple rather than biting a bottle cap, drinking through plastic, or placing its head through solid timber. If a gate or shield is used, clearly establish its hinge/track and show one continuous opening action with no impossible transformation.
+
+============================================================
+7. EXACT 30-SECOND RETENTION ARCHITECTURE
+============================================================
+
+Default duration is exactly 30 seconds unless I explicitly request 15 seconds or another duration. For a 30-second video, preserve this competitor-decoded rhythm while adapting the micro-actions to the chosen topic.
+
+0–2 SECONDS — FIRST-FRAME HOOK: Begin immediately inside the barn with the most unusual and readable view of the long milk system. Both the feeding apparatus and a meaningful portion of the waiting herd must already be visible. Place one oversized foreground bottle, a repeated row of nipples, a centered double-sided rail, or another high-curiosity object close to the lens while the line recedes deep into the barn. The farmer’s hand should already be touching or adjusting something. Do not start with an empty barn, exterior establishing shot, fade-in, logo, title card, walking introduction, or slow camera search.
+
+2–7 SECONDS — CONTROLLED ANTICIPATION: The farmer completes several connected micro-actions belonging to one preparation task: checks the nearest nipple, steadies a curious goat, tests the latch, straightens two bottles, or removes a simple safety bar. Meanwhile the herd becomes progressively more attentive. Show constant small changes every one to two seconds—ears turning, necks extending, one goat hopping, collars shifting in the crowd, hooves scuffing bedding, the farmer changing hand position—without creating random chaos too early. The viewer must clearly understand that mass feeding is about to begin.
+
+7–10 SECONDS — RELEASE SIGNAL: The farmer finishes the task, removes his hand, opens the established gate or steps decisively aside. The front goats react first and the herd’s pressure travels backward like a natural wave. The unseen recorder physically adjusts position to keep the feeding line and approaching herd readable. There is no cut, time jump, magical signal, or telepathic perfect synchronization.
+
+10–13 SECONDS — HERD-RUSH DOPAMINE SPIKE: The goats surge toward the available nipples in one fast, messy but safe burst. The nearest animals cross the lower frame, wood shavings scatter, the camera produces a small authentic reactive wobble, and the audio becomes denser with hooves and bleats. Preserve every animal’s anatomy. Use natural body occlusion to communicate crowd density, but never hide a morph, teleportation, duplicated goat, broken limb, or pass-through collision. The rack remains solid.
+
+13–18 SECONDS — CHAOS TURNS INTO ORDER: The first goats latch, later goats fill the remaining gaps, and the crowd transforms into a readable repeated formation. Bodies rotate and settle through visible physical steps. The camera slowly changes from reactive framing to a cleaner view down the line. Every occupied station must make anatomical sense. Include small imperfections—one goat searches for half a second, another gently sidesteps, a collar catches the light—so the result feels learned and real rather than robotically synchronized.
+
+18–26 SECONDS — EXTENDED SATISFYING PAYOFF: Hold the feeding action long enough for viewers to scan the pattern and appreciate scale. The unseen recorder takes a slow careful step backward or drifts along the rack, revealing more goats and bottles without changing lens or cutting. Goats continue tiny individual movements while remaining anchored to their stations: jaw pulses, ear flicks, tail twitches, weight shifts, and occasional brief glances. The farmer moves quietly toward the far end or stands back supervising. Do not introduce a second storyline, dialogue, joke, accident, or new location.
+
+26–30 SECONDS — FINAL COMPLETE TABLEAU: End on the strongest naturally composed wide view: the full or nearly full feeding line, repeated milk containers, aligned goat bodies, colored collar accents, barn rafters, and the farmer small in the background. Let the formation breathe for the final seconds. The last image should create completion and rewatch value, but it must remain live footage with subtle motion—not a frozen frame, artificial slow motion, end card, or fade to black.
+
+For 15-second versions, compress the same logic rather than deleting it: 0–1.5 hook, 1.5–4 preparation, 4–6 release, 6–9 rush, 9–12 organization, and 12–15 final satisfying reveal. Never simply speed the footage unnaturally.
+
+============================================================
+8. RAW REAR-iPHONE CAMERA LOCK
+============================================================
+
+Every final video must be specified as ultra-photorealistic 8K target/master quality, vertical 9:16, 24 FPS, recorded in one continuous handheld take using the rear camera of a modern iPhone Pro-class smartphone. A third person is holding the phone and recording, but that recorder is never visible. The phone itself, recorder’s face/body/hands, reflection, silhouette, and shadow must never enter the frame. Use the natural approximately 1× wide-camera perspective rather than fisheye, ultra-wide distortion, telephoto compression, drone footage, surveillance footage, tripod footage, bodycam, selfie camera, or professional cinema camera.
+
+The footage must feel observational and imperfect in believable ways: mild hand tremor, tiny footing corrections, natural walking bob, brief autofocus adjustment when goats cross close to the lens, restrained automatic exposure breathing toward the bright doorway, realistic rolling-shutter skew during the quickest reaction, modest deep focus, real phone sensor texture in shadows, slightly clipped doorway highlights, normal smartphone sharpening and compression, and imperfect but purposeful framing. These imperfections must never become violent shake, blur that hides the action, fake VHS damage, lens dirt covering the scene, digital glitches, or amateur incompetence.
+
+Use one continuous shot with no hard cuts, jump cuts, montage, hidden edit, angle reset, impossible zoom, speed ramp, time-lapse, slow motion, orbit, crane move, rack-focus effect, cinematic dolly, or transition. Camera movement must come from the unseen recorder physically taking plausible steps inside the aisle. Preserve the 180-degree axis and consistent left/right geography. The camera may begin near one end of the rack, react to the rush, and then slowly pull backward or track beside the line for the final reveal. It must never teleport to the opposite side of the equipment.
+
+Do not use cinematic color grading, teal-orange treatment, dramatic rim lighting, artificial volumetric rays, shallow-depth portrait bokeh, glossy advertising light, fantasy atmosphere, over-sharpened HDR, oversaturated colors, or a movie-trailer look. “8K” means fine believable detail and clean generation, while “raw iPhone” defines the visual behavior and authenticity.
+
+============================================================
+9. AUDIO AND DIALOGUE LOCK
+============================================================
+
+Default to pure synchronized diegetic barn audio recorded through the same unseen iPhone: layered baby-goat bleats at different distances, small hooves scraping and thudding in dry wood shavings, soft bottle/rack contact, rubber-nipple squeaks, jacket fabric, the farmer’s boots, gentle breathing, milk movement, and broad quiet barn ambience. Sound intensity must track the visible action: individual bleats during anticipation, a dense but non-distorted burst during the rush, then softer repetitive feeding and foot-adjustment sounds during the payoff. Maintain believable distance and room reflections.
+
+Unless I explicitly request speech, include no spoken dialogue, narration, voice-over, announcer, song, background music, laugh track, meme sound, dramatic impact, or added audience reaction. Do not add subtitles, captions, labels, emojis, red circles, arrows, logos, watermarks, user-interface elements, or any on-screen text inside the generated video. Social-media caption and SEO text must remain outside the video.
+
+============================================================
+10. PHYSICAL CONTINUITY AND OBJECT-PERMANENCE LOCK
+============================================================
+
+Treat spatial and temporal continuity as more important than spectacle. Before writing each prompt, mentally map the barn, farmer, herd, gate, rack, bottle row, accessible feeding sides, background doorway, camera start, camera path, and final camera position. Every movement must connect through visible intermediate action. The farmer cannot be at the camera end in one moment and the distant doorway in the next. A goat cannot appear behind a closed barrier without passing through an opening. Once a goat takes a feeding position, preserve its location and neighbors unless the prompt explicitly describes a visible sidestep. Foreground objects cannot swap order as the camera moves. The direction of goat travel, camera travel, and rack perspective must remain consistent.
+
+Do not demand impossible numerical perfection from a crowd generator, but establish one persistent herd and sufficient feeding stations. Avoid repeatedly stating contradictory exact counts. Use phrases such as “roughly two dozen established goat kids” and “a matching long sequence of accessible stations,” then explicitly forbid appearing/disappearing animals and equipment. When individuality matters, anchor three to five foreground goats using stable coat/collar descriptions and allow the background herd to remain naturally dense but coherent.
+
+============================================================
+11. ORIGINAL TOPIC-GENERATION ENGINE
+============================================================
+
+Generate fresh episodes by combining one choice from several controlled dimensions while keeping the core identity unchanged.
+
+FEEDER GEOMETRY OPTIONS: one-sided wall row; centered double-sided rail; low upright-bottle channel; overhead inverted-jug line; shallow U-shaped arrangement; two parallel lanes; gently curved semicircle; staggered-height rack for differently sized kids; barn-door reveal rack; short training row connected to a longer main row.
+
+PREPARATION/TRIGGER OPTIONS: farmer tests the nearest nipple; removes a long wooden safety bar; opens a simple mesh holding gate; lowers a clearly hinged access panel; straightens the final bottle; guides one hesitant goat to demonstrate; slides a real latch; walks from the foreground to release the herd at the far end; raises a visible divider; taps the established feeding rail once while stepping aside.
+
+MICRO-CHAOS OPTIONS: one eager goat starts half a second early; two front goats briefly choose the same station and one sidesteps; a tiny goat searches for the final open nipple; the herd divides naturally around the two sides of a central rack; bedding sprays toward the lens; one goat hops before joining; colored collars create a moving sequence; the final late goat completes an empty gap; goats approach in a wave from back to front.
+
+FINAL PAYOFF OPTIONS: one extremely long single line; two perfectly readable parallel lines; symmetrical bodies facing inward; overhead bottle repetition above aligned backs; camera pullback revealing far more goats than expected; a centered vanishing point; alternating coat colors; last empty station visibly filled; farmer framed small at the bright doorway while the entire herd feeds.
+
+ENVIRONMENTAL VARIATION OPTIONS: soft overcast daylight; crisp cool morning; warm late-afternoon daylight without cinematic grading; light rain audible outside the open door; snowy farmyard glimpsed outside while the dry barn remains unchanged; calm summer daylight. Weather stays outside and cannot endanger the goats or alter the core barn layout.
+
+Reject weak topics that are only color changes, title changes, impossible machines, dangerous stunts, fantasy transformations, goat costumes, dancing animals, talking goats, human-like behavior, random comedy, or unrelated farm chores. Do not repeat the exact same hook, release action, camera route, and final geometry in multiple topics from one batch. The best topics must be understandable in under one second and achievable in one continuous 30-second take.
+
+============================================================
+12. LONG-PROMPT WRITING STANDARD
+============================================================
+
+Every main video prompt must be written in polished professional English and begin with a decisive setup sentence similar to: “Create an exactly 30-second ultra-photorealistic 8K vertical 9:16 smartphone video at 24 FPS, recorded as one continuous handheld take by an unseen third person using the rear 1× camera of a modern iPhone inside a working American goat barn.” Then customize every detail to the selected concept.
+
+Without creating separate paragraphs, the prompt must cover: precise first frame; recurring farmer identity and wardrobe; persistent goat-herd appearance; stable barn geometry; exact feeding-system construction; foreground/midground/background placement; second-by-second action progression; farmer hand/body movements; goat anticipation; physical release mechanism; herd acceleration and deceleration; camera operator’s continuous route and reactive motion; the shift from crowding to orderly latching; individual foreground-goat continuity; final formation; natural lighting behavior; exposure and focus behavior; surface textures; synchronized diegetic sound; animal-welfare safety; object permanence; and a detailed negative constraint ending.
+
+Use timestamp blocks appropriate to the actual duration, but write them inline inside the same single paragraph. Make every time block advance the action. Do not over-fragment into 30 one-second instructions, and do not spend half the prompt repeating “ultra-realistic.” Prefer specific observable details. Do not mention analysis, references, competitor names, prompt engineering, AI generation, or virality inside the video prompt itself. Do not instruct the generated farmer or camera operator to create social-media content. The scene should simply exist as a real farm moment.
+
+Before delivery, silently verify that the main paragraph is at least 5,200 characters. If it is short, expand concrete physical continuity, animal interaction, camera behavior, sound synchronization, material texture, and failure prevention. Never inflate the count using meaningless adjective lists or duplicate sentences. Never falsely label a prompt “5,000+ characters” without verifying it.
+
+============================================================
+13. GLOBAL NEGATIVE CONSTRAINTS
+============================================================
+
+Every prompt must explicitly prohibit: cartoon, animation, illustration, stylized 3D, CGI appearance, game-engine look, Unreal Engine look, plastic fur, waxy skin, commercial stock-footage polish, cinematic grading, studio light, shallow artificial bokeh, impossible lens flare, excessive HDR, fantasy barn, fake slow motion, time-lapse, jump cut, montage, scene transition, hidden cut, teleportation, reverse motion, duplicated animals, disappearing animals, new goats spawning, merged bodies, interpenetrating goats, extra heads, extra legs, fused hooves, broken joints, rubber limbs, warped faces, changing coat markings, changing collars, changing farmer clothes, changing bottle count, floating bottles, bending rack, melting wood, impossible milk flow, mouths missing nipples, heads through solid rails, sliding feet, motion without weight, unsafe collisions, frightened/injured animals, abuse, blood, visible recorder, visible phone, camera reflection, recorder shadow, selfie angle, drone view, surveillance view, professional film rig, dialogue unless requested, narration, music, subtitles, text overlay, logo, watermark, platform UI, emojis, red circles, arrows, flicker, frame tearing, temporal shimmer, morphing, glitching, AI slop, and abrupt ending.
+
+Do not merely paste this negative list identically into every batch prompt. Integrate the relevant prohibitions clearly and naturally, with extra emphasis on the failure points created by that specific concept.
+
+============================================================
+14. COMPLETE SEO PACKAGE REQUIRED AFTER EACH VIDEO PROMPT
+============================================================
+
+After every main prompt, generate a platform-ready SEO package in natural American English. Keep all promises truthful and directly supported by the visible video. Avoid misleading “real/not AI” claims, fake emergencies, fabricated rescue claims, excessive all-caps, or guaranteed-viral language.
+
+1. YOUTUBE SHORTS TITLE: One strong curiosity-driven title, ideally 45–70 characters, using natural high-intent phrases such as baby goats, goat feeding, feeding time, goat farm, or satisfying animal video when relevant. Do not spoil every beat.
+
+2. FACEBOOK/REELS CAPTION: One engaging caption with a strong first sentence, easy Tier-1 English, a clear description of the anticipation and payoff, and one natural comment question. Keep it readable rather than keyword-stuffed.
+
+3. SEO DESCRIPTION: Approximately 120–220 words describing the actual scene, including relevant search phrases naturally. Mention the mass feeding setup, baby-goat behavior, satisfying synchronized result, authentic farm environment, and why viewers may enjoy it. Do not mention technical prompting unless I specifically request creator-facing copy.
+
+4. HASHTAGS: Provide approximately 12–18 relevant hashtags at the end of the description/caption. Every hashtag must always be entirely lowercase, even when the usual brand spelling uses capitals. Mix broad and niche terms without spam. Examples of eligible categories include #babygoats, #goatfeeding, #goatfarm, #cuteanimals, #farmanimals, #animalvideos, #satisfyingvideos, #farmlife, #goatkids, #feedingtime, #viralanimals, and #shorts, but customize them and do not blindly use the same set every time.
+
+5. SEO KEYWORDS: Provide 12–20 natural keyword phrases tailored to the exact concept, separated clearly.
+
+6. VIDEO TAGS: Provide a comma-separated tag string under 500 characters, with no hashtag symbols. Use relevant spelling variants and long-tail phrases; do not include unrelated trending names.
+
+7. THUMBNAIL/FIRST-FRAME HOOK: Give one concise instruction selecting the strongest genuine frame from the video. Favor giant foreground milk bottles, the long vanishing-point rack, visible waiting goats, and the farmer’s hand already on the trigger. Do not add fake elements. Do not recommend text overlay unless I specifically ask for thumbnail text.
+
+When I request a Facebook-only pack, prioritize caption, description, and lowercase hashtags. When I request YouTube-only, prioritize title, description, lowercase hashtags, tags under 500 characters, and thumbnail hook. When no platform is specified, provide the complete cross-platform package above.
+
+============================================================
+15. BULK FILE QUALITY CONTROL
+============================================================
+
+Before creating the final TXT pack, silently run this checklist for every video: exactly the requested number of videos; unique topic; correct duration; 9:16 vertical; 24 FPS; ultra-photorealistic 8K target; raw rear-iPhone handheld style; unseen third-person recorder; one continuous take; no cuts; first-frame apparatus plus herd hook; recurring farmer continuity; recurring barn continuity; persistent goat identities; plausible feeder; release visible by approximately 10 seconds; major rush visible; chaos becomes order; final formation held long enough; diegetic sound only by default; no text inside video; main prompt is one paragraph; main prompt exceeds 5,200 characters; caption included; hashtags lowercase; SEO description included; keyword list included; tags under 500 characters; thumbnail hook included; and exactly one blank line between complete units.
+
+If any item fails, correct it before delivery. Never write disclaimers about token limits inside the file. Never substitute short prompts, summaries, placeholders, “same as above,” “repeat previous constraints,” or references to another prompt. Each prompt must be independently usable when copied alone into Seedance 2.5/Higgsfield.
+
+============================================================
+16. RESPONSE BEHAVIOR
+============================================================
+
+Follow my latest instruction as the active command while preserving this master system. If I change duration, aspect ratio, number of prompts, audio choice, location, farmer, animal count, or platform for a particular batch, apply that change only where requested and retain every non-conflicting lock. Do not ask unnecessary clarification questions when a reasonable answer is already defined here. If I say only “topics,” use Topic Mode. If I give a number such as “10 prompts,” use Bulk Mode and produce exactly 10. If I say “number 4 prompt,” use Selected Prompt Mode. If I say “TXT,” create the downloadable file. If I ask for a storyboard, derive it faithfully from the chosen long prompt while preserving the same camera axis, character identities, apparatus, and physical chronology.
+
+Start Topic Mode with this exact heading: “ORIGINAL VIRAL BABY-GOAT FEEDING TOPICS.” Start a selected prompt with the chosen topic title, then the single-paragraph main prompt. For bulk files, use clear VIDEO 01, VIDEO 02 numbering. Keep chat explanations brief; prioritize the requested finished deliverable.
+
+END OF ULTRA-DETAILED REUSABLE MASTER PROMPT ENGINE</code></pre>
+                </div>
+
+                <div class="sandbox-actions">
+                    <button type="button" class="sandbox-copy-btn" id="sandbox-copy-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        Copy full master prompt
+                    </button>
+                    <a href="prompts/281.html" class="sandbox-view-btn">
+                        View page
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Curated Viral Prompts Grid (4 cards in 1 row) -->
+    <section class="curated-section">
+        <div class="section-head">
+            <span class="section-badge">Curated selection</span>
+            <h2 class="section-title">Top performing prompts</h2>
+            <p class="section-desc">Hand-picked prompts that drive strong viewer retention across Shorts, Reels, and TikTok.</p>
+        </div>
+
+        <div class="grid">
             
-            <h2 class="plist-head">Premium Prompts</h2>
-        <div id="premium-list">
-                <a class="prow" href="prompts/281.html">
-        <div class="prow-thumb ">
-                            <img src="uploads/926cf2e4733cbb24b7e059a2.png" alt="" loading="lazy" decoding="async" width="660" height="371">
-                        <span class="prow-file-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </span>
-        </div>
-        <div class="prow-body">
-            <h3>30SEC BABY-GOAT FEEDING SATISFACTION VIDEOS</h3>
-            <span class="prow-cat">🗂 1 prompt</span>
-            <span class="prow-price ">
-                Included            </span>
-            <span class="prow-btn ">
-                View            </span>
-        </div>
-    </a>
-        <a class="prow" href="prompts/280.html">
-        <div class="prow-thumb ">
-                            <img src="uploads/f0d86bb85606e86cd901a2fc.png" alt="" loading="lazy" decoding="async" width="660" height="371">
-                        <span class="prow-file-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </span>
-        </div>
-        <div class="prow-body">
-            <h3>30SEC Beyond The Clouds</h3>
-            <span class="prow-cat">🗂 1 prompt</span>
-            <span class="prow-price ">
-                Included            </span>
-            <span class="prow-btn ">
-                View            </span>
-        </div>
-    </a>
-        <a class="prow" href="prompts/279.html">
-        <div class="prow-thumb ">
-                            <img src="uploads/3f566f82167873056e28bc52.png" alt="" loading="lazy" decoding="async" width="660" height="371">
-                        <span class="prow-file-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </span>
-        </div>
-        <div class="prow-body">
-            <h3>FAKE-LOST 1980s AMERICAN FANTASY COMEDY EPISODE</h3>
-            <span class="prow-cat">🗂 1 prompt</span>
-            <span class="prow-price ">
-                Included            </span>
-            <span class="prow-btn ">
-                View            </span>
-        </div>
-    </a>
-        <a class="prow" href="prompts/278.html">
-        <div class="prow-thumb ">
-                            <img src="uploads/0fd79ae859b0e0be3d3bddd7.png" alt="" loading="lazy" decoding="async" width="660" height="371">
-                        <span class="prow-file-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </span>
-        </div>
-        <div class="prow-body">
-            <h3>30SEC  AMERICAN ROADSIDE SUPERNATURAL ENCOUNTER</h3>
-            <span class="prow-cat">🗂 1 prompt</span>
-            <span class="prow-price ">
-                Included            </span>
-            <span class="prow-btn ">
-                View            </span>
-        </div>
-    </a>
-        <a class="prow" href="prompts/277.html">
-        <div class="prow-thumb ">
-                            <img src="uploads/97f21cf388255071b8e19356.png" alt="" loading="lazy" decoding="async" width="660" height="371">
-                        <span class="prow-file-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </span>
-        </div>
-        <div class="prow-body">
-            <h3>30SEC NIA &amp; KOBU ADVENTURES</h3>
-            <span class="prow-cat">🗂 1 prompt</span>
-            <span class="prow-price ">
-                Included            </span>
-            <span class="prow-btn ">
-                View            </span>
-        </div>
-    </a>
-        <a class="prow" href="prompts/276.html">
-        <div class="prow-thumb ">
-                            <img src="uploads/e79fe608fdb1d406e8472ef6.png" alt="" loading="lazy" decoding="async" width="660" height="371">
-                        <span class="prow-file-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </span>
-        </div>
-        <div class="prow-body">
-            <h3>30 sec TODDLER + PARENTS VIRAL FAMILY MICRO-DRAMA</h3>
-            <span class="prow-cat">🗂 1 prompt</span>
-            <span class="prow-price ">
-                Included            </span>
-            <span class="prow-btn ">
-                View            </span>
-        </div>
-    </a>
-        <a class="prow" href="prompts/275.html">
-        <div class="prow-thumb ">
-                            <img src="uploads/a2088fa661997ec76f927df3.png" alt="" loading="lazy" decoding="async" width="660" height="371">
-                        <span class="prow-file-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </span>
-        </div>
-        <div class="prow-body">
-            <h3>30SEC FIRUM + VIRUM INSPIRED</h3>
-            <span class="prow-cat">🗂 1 prompt</span>
-            <span class="prow-price ">
-                Included            </span>
-            <span class="prow-btn ">
-                View            </span>
-        </div>
-    </a>
-        <a class="prow" href="prompts/274.html">
-        <div class="prow-thumb ">
-                            <img src="uploads/83582f661461f3401b0d347c.png" alt="" loading="lazy" decoding="async" width="660" height="371">
-                        <span class="prow-file-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </span>
-        </div>
-        <div class="prow-body">
-            <h3>30SEC TODDLER EMOTIONAL MICRO-DRAMA</h3>
-            <span class="prow-cat">🗂 1 prompt</span>
-            <span class="prow-price ">
-                Included            </span>
-            <span class="prow-btn ">
-                View            </span>
-        </div>
-    </a>
-        <a class="prow" href="prompts/273.html">
-        <div class="prow-thumb ">
-                            <img src="uploads/87b8a05a29c0fbfc2fa46e74.png" alt="" loading="lazy" decoding="async" width="660" height="371">
-                        <span class="prow-file-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </span>
-        </div>
-        <div class="prow-body">
-            <h3>30SEC BIRD NEST BUILDING / NEST CONSTRUCTION</h3>
-            <span class="prow-cat">🗂 1 prompt</span>
-            <span class="prow-price ">
-                Included            </span>
-            <span class="prow-btn ">
-                View            </span>
-        </div>
-    </a>
-        <a class="prow" href="prompts/272.html">
-        <div class="prow-thumb ">
-                            <img src="uploads/69e1b66e6eb6084b90980125.png" alt="" loading="lazy" decoding="async" width="660" height="371">
-                        <span class="prow-file-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </span>
-        </div>
-        <div class="prow-body">
-            <h3>30-SECOND CHILD WEIRD DRAWING ANIMALS IN REALITY</h3>
-            <span class="prow-cat">🗂 1 prompt</span>
-            <span class="prow-price ">
-                Included            </span>
-            <span class="prow-btn ">
-                View            </span>
-        </div>
-    </a>
-        <a class="prow" href="prompts/271.html">
-        <div class="prow-thumb ">
-                            <img src="uploads/b38896d306fab2115c65f280.png" alt="" loading="lazy" decoding="async" width="660" height="371">
-                        <span class="prow-file-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </span>
-        </div>
-        <div class="prow-body">
-            <h3>30SEC Toddlers Discover Gelato Delights</h3>
-            <span class="prow-cat">🗂 1 prompt</span>
-            <span class="prow-price ">
-                Included            </span>
-            <span class="prow-btn ">
-                View            </span>
-        </div>
-    </a>
-        <a class="prow" href="prompts/269.html">
-        <div class="prow-thumb ">
-                            <img src="uploads/e6d4ba952ebf122188b72f64.png" alt="" loading="lazy" decoding="async" width="660" height="371">
-                        <span class="prow-file-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </span>
-        </div>
-        <div class="prow-body">
-            <h3>30SEC Water Obstacle Challenge</h3>
-            <span class="prow-cat">🗂 1 prompt</span>
-            <span class="prow-price ">
-                Included            </span>
-            <span class="prow-btn ">
-                View            </span>
-        </div>
-    </a>
+        <article class="pcard">
+            <div class="pcard-thumb">
+                <a href="prompts/281.html" class="pcard-thumb-link">
+                    <img src="uploads/926cf2e4733cbb24b7e059a2.png" alt="30SEC BABY-GOAT FEEDING SATISFACTION VIDEOS" loading="lazy" decoding="async" width="660" height="371">
+                </a>
+                <span class="badge-top-left card-badge card-badge-free">Free</span>
+                <span class="badge-top-right card-badge card-badge-id">#281</span>
+                <div class="card-quick-actions">
+                    <a href="prompts/281.html" class="quick-action-btn">View Master Prompt</a>
+                </div>
             </div>
-                    <p style="text-align:center;margin:6px 0 10px;">
-                <a href="browse.html?type=premium" class="btn btn-primary">Load More Prompts →</a>
-            </p>
-            
-    
-</div>
+            <div class="pcard-body">
+                <div class="pcard-meta-row">
+                    <span class="pcard-cat">General</span>
+                    <span class="pcard-date">Master Engine</span>
+                </div>
+                <h3 class="pcard-title">
+                    <a href="prompts/281.html">30SEC BABY-GOAT FEEDING SATISFACTION VIDEOS</a>
+                </h3>
+            </div>
+            <div class="pcard-foot">
+                <a href="prompts/281.html" class="btn btn-outline" style="width:100%;text-align:center;">Open Prompt →</a>
+            </div>
+        </article>
+
+
+        <article class="pcard">
+            <div class="pcard-thumb">
+                <a href="prompts/280.html" class="pcard-thumb-link">
+                    <img src="uploads/f0d86bb85606e86cd901a2fc.png" alt="30SEC Beyond The Clouds" loading="lazy" decoding="async" width="660" height="371">
+                </a>
+                <span class="badge-top-left card-badge card-badge-free">Free</span>
+                <span class="badge-top-right card-badge card-badge-id">#280</span>
+                <div class="card-quick-actions">
+                    <a href="prompts/280.html" class="quick-action-btn">View Master Prompt</a>
+                </div>
+            </div>
+            <div class="pcard-body">
+                <div class="pcard-meta-row">
+                    <span class="pcard-cat">General</span>
+                    <span class="pcard-date">Master Engine</span>
+                </div>
+                <h3 class="pcard-title">
+                    <a href="prompts/280.html">30SEC Beyond The Clouds</a>
+                </h3>
+            </div>
+            <div class="pcard-foot">
+                <a href="prompts/280.html" class="btn btn-outline" style="width:100%;text-align:center;">Open Prompt →</a>
+            </div>
+        </article>
+
+
+        <article class="pcard">
+            <div class="pcard-thumb">
+                <a href="prompts/279.html" class="pcard-thumb-link">
+                    <img src="uploads/3f566f82167873056e28bc52.png" alt="FAKE-LOST 1980s AMERICAN FANTASY COMEDY EPISODE" loading="lazy" decoding="async" width="660" height="371">
+                </a>
+                <span class="badge-top-left card-badge card-badge-free">Free</span>
+                <span class="badge-top-right card-badge card-badge-id">#279</span>
+                <div class="card-quick-actions">
+                    <a href="prompts/279.html" class="quick-action-btn">View Master Prompt</a>
+                </div>
+            </div>
+            <div class="pcard-body">
+                <div class="pcard-meta-row">
+                    <span class="pcard-cat">General</span>
+                    <span class="pcard-date">Master Engine</span>
+                </div>
+                <h3 class="pcard-title">
+                    <a href="prompts/279.html">FAKE-LOST 1980s AMERICAN FANTASY COMEDY EPISODE</a>
+                </h3>
+            </div>
+            <div class="pcard-foot">
+                <a href="prompts/279.html" class="btn btn-outline" style="width:100%;text-align:center;">Open Prompt →</a>
+            </div>
+        </article>
+
+
+        <article class="pcard">
+            <div class="pcard-thumb">
+                <a href="prompts/278.html" class="pcard-thumb-link">
+                    <img src="uploads/0fd79ae859b0e0be3d3bddd7.png" alt="30SEC  AMERICAN ROADSIDE SUPERNATURAL ENCOUNTER" loading="lazy" decoding="async" width="660" height="371">
+                </a>
+                <span class="badge-top-left card-badge card-badge-free">Free</span>
+                <span class="badge-top-right card-badge card-badge-id">#278</span>
+                <div class="card-quick-actions">
+                    <a href="prompts/278.html" class="quick-action-btn">View Master Prompt</a>
+                </div>
+            </div>
+            <div class="pcard-body">
+                <div class="pcard-meta-row">
+                    <span class="pcard-cat">General</span>
+                    <span class="pcard-date">Master Engine</span>
+                </div>
+                <h3 class="pcard-title">
+                    <a href="prompts/278.html">30SEC  AMERICAN ROADSIDE SUPERNATURAL ENCOUNTER</a>
+                </h3>
+            </div>
+            <div class="pcard-foot">
+                <a href="prompts/278.html" class="btn btn-outline" style="width:100%;text-align:center;">Open Prompt →</a>
+            </div>
+        </article>
+
+        </div>
+
+        <div class="curated-foot-action">
+            <a href="browse.html" class="curated-all-btn">
+                Browse all 279 prompts
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- 5. Creator Workflow Section -->
+    <section class="workflow-section">
+        <div class="section-head">
+            <span class="section-badge">Simple pipeline</span>
+            <h2 class="section-title">How YeaPrompts works</h2>
+            <p class="section-desc">Three steps from prompt discovery to published viral video.</p>
+        </div>
+
+        <div class="workflow-grid">
+            <div class="workflow-card">
+                <div class="workflow-step-num">1</div>
+                <div class="workflow-card-title">Discover and filter</div>
+                <div class="workflow-card-desc">Search by topic, style, or duration to find hooks suited to your audience niche.</div>
+            </div>
+            <div class="workflow-card">
+                <div class="workflow-step-num">2</div>
+                <div class="workflow-card-title">Copy with one click</div>
+                <div class="workflow-card-desc">Grab production-ready prompts packed with motion dynamics and continuity constraints.</div>
+            </div>
+            <div class="workflow-card">
+                <div class="workflow-step-num">3</div>
+                <div class="workflow-card-title">Generate and publish</div>
+                <div class="workflow-card-desc">Paste into Kling, Seedance, or Veo, render your clip, and post to Reels, Shorts, or TikTok.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Creator FAQ Accordion -->
+    <section class="faq-section">
+        <div class="section-head">
+            <span class="section-badge">Frequently asked</span>
+            <h2 class="section-title">Questions and answers</h2>
+            <p class="section-desc">Common questions about using YeaPrompts master instructions.</p>
+        </div>
+
+        <div class="faq-list">
+            <details class="faq-item" open>
+                <summary class="faq-summary">
+                    <span>What AI video tools do these prompts work with?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-content">
+                    <p>YeaPrompts master instructions work with Seedance, Kling, Google Veo, Runway Gen-3, Luma Dream Machine, and Midjourney. The structural constraints maintain stable character geometry and realistic physics across platforms.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    <span>Are all prompts free to use?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-content">
+                    <p>Yes. Every master prompt in our public catalog is accessible with zero cost. You can copy, modify, and use them for commercial or personal video production.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    <span>How do master prompts keep motion consistent?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-content">
+                    <p>Each master prompt specifies fixed camera axes, lighting sources, subject velocity, and transition anchors. This prevents AI engines from morphing faces or distorting objects between keyframes.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    <span>Can I customize the characters or setting in a prompt?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-content">
+                    <p>Yes. You can swap out character descriptions, clothing, environments, or lighting cues while keeping the prompt pacing and camera direction syntax intact.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    <span>How often is the prompt library updated?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-content">
+                    <p>New tested prompts are added regularly, focusing on emerging short-form video trends and algorithm-favored hooks.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    <span>Where can I share my generated videos and get feedback?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-content">
+                    <p>Visit our Social Corner to share links, post your results, and connect with fellow creators in the community.</p>
+                </div>
+            </details>
+        </div>
+    </section>
 
 </main>
 
@@ -392,18 +590,13 @@
     </div>
     <p class="footer-copy">© 2026 YeaPrompts</p>
 </footer>
-<a href="https://wa.me/919131421048?text=Hi%21+I%27m+a+premium+member+of+your+YeaPrompts+community.+I+need+some+help."
+
+<a href="https://wa.me/919131421048?text=Hi%21+I%27m+a+creator+using+YeaPrompts.+I+need+some+help."
    target="_blank" rel="noopener" class="wa-float" title="WhatsApp Support">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.1 4.5.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.79h-.01a9.72 9.72 0 0 1-4.96-1.36l-.36-.21-3.69.97.98-3.6-.23-.37a9.72 9.72 0 0 1-1.49-5.18c0-5.37 4.37-9.74 9.75-9.74a9.68 9.68 0 0 1 6.89 2.86 9.68 9.68 0 0 1 2.85 6.89c0 5.38-4.37 9.74-9.73 9.74zm8.28-18.02A11.64 11.64 0 0 0 12.05.33C5.6.33.35 5.58.35 12.03c0 2.06.54 4.07 1.56 5.84L.25 23.79l6.07-1.59a11.68 11.68 0 0 0 5.72 1.46h.01c6.45 0 11.7-5.25 11.7-11.7 0-3.13-1.22-6.07-3.42-8.19z"/></svg>
     <span class="wa-float-label">Support</span>
 </a>
 
-<!-- Premium member WhatsApp support -->
-<a href="https://wa.me/919131421048?text=Hi%21+I%27m+a+premium+member+of+your+YeaPrompts+community.+I+need+some+help."
-   target="_blank" rel="noopener" class="wa-float" title="WhatsApp Support">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.1 4.5.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.79h-.01a9.72 9.72 0 0 1-4.96-1.36l-.36-.21-3.69.97.98-3.6-.23-.37a9.72 9.72 0 0 1-1.49-5.18c0-5.37 4.37-9.74 9.75-9.74a9.68 9.68 0 0 1 6.89 2.86 9.68 9.68 0 0 1 2.85 6.89c0 5.38-4.37 9.74-9.73 9.74zm8.28-18.02A11.64 11.64 0 0 0 12.05.33C5.6.33.35 5.58.35 12.03c0 2.06.54 4.07 1.56 5.84L.25 23.79l6.07-1.59a11.68 11.68 0 0 0 5.72 1.46h.01c6.45 0 11.7-5.25 11.7-11.7 0-3.13-1.22-6.07-3.42-8.19z"/></svg>
-    <span class="wa-float-label">Support</span>
-</a>
-<script src="assets/js/main.js?v=6"></script>
+<script src="assets/js/main.js?v=7"></script>
 </body>
 </html>

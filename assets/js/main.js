@@ -341,4 +341,57 @@
         });
     });
 
+    /* ─── Tagline Scroll Reveal Engine (Fontem B11 Spec) ─── */
+    var initTaglineReveal = function () {
+        var words = document.querySelectorAll('.tagline-word');
+        if (!words.length) return;
+        if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        words.forEach(function (w, i) {
+                            setTimeout(function () {
+                                w.classList.add('is-active');
+                            }, i * 65);
+                        });
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.25 });
+            var section = document.querySelector('.tagline-reveal-section');
+            if (section) observer.observe(section);
+        } else {
+            words.forEach(function (w) { w.classList.add('is-active'); });
+        }
+    };
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTaglineReveal);
+    } else {
+        initTaglineReveal();
+    }
+
+    /* ─── Sandbox Copy Button Handler ─── */
+    var initSandbox = function () {
+        var sandboxBtn = document.getElementById('sandbox-copy-btn');
+        if (!sandboxBtn) return;
+        sandboxBtn.addEventListener('click', function () {
+            var codeEl = document.getElementById('sandbox-prompt-code');
+            if (!codeEl) return;
+            var text = codeEl.innerText || codeEl.textContent;
+            copyTextToClipboard(text);
+            sandboxBtn.classList.add('copied');
+            sandboxBtn.innerHTML = '✓ Copied to Clipboard';
+            setTimeout(function () {
+                sandboxBtn.classList.remove('copied');
+                sandboxBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> Copy Full Master Prompt';
+            }, 2200);
+        });
+    };
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSandbox);
+    } else {
+        initSandbox();
+    }
+
 })();
+

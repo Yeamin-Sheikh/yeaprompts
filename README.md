@@ -8,6 +8,8 @@ Browse prompts online: https://yeamin-sheikh.github.io/yeaprompts/browse.html
 
 ## Features
 
+- Redesigned high-converting creator landing page featuring live stats, interactive prompt sandbox, B11 tagline word reveal engine, curated 4-column cards, 3-step workflow, and creator FAQ.
+- Fontem motion architecture: cubic bezier easing tokens, sub-300ms transitions, transform and opacity only, nested border radius formula.
 - All 279 prompts with full text, categories, updated dates, and storyboard reference images.
 - Dual theme engine supporting default dark mode and light mode with persistent local storage settings.
 - Instant live search with debounced filtering across prompt IDs (for example #18), titles, and categories.
@@ -26,7 +28,7 @@ Browse prompts online: https://yeamin-sheikh.github.io/yeaprompts/browse.html
 
 ```text
 brave-hertz/
-|-- index.html                   # Replicated homepage
+|-- index.html                   # High-converting creator landing page
 |-- browse.html                  # Catalog page with search, filters, and pagination
 |-- prompt.html                  # Dynamic prompt viewer (accepts ?id=X parameter)
 |-- community.html               # Social corner and community posts
@@ -42,6 +44,9 @@ brave-hertz/
 |-- generate_site.mjs            # HTML generator script
 |-- all_prompts_index.json       # Catalog index of all 279 prompts
 |-- README.md                    # Project documentation
+|-- scripts/
+|   |-- append_styles.mjs        # Script to append Fontem landing styles to style.css
+|   └── generate_index.mjs       # Script to generate redesigned index.html
 |-- api/
 |   └── load_more_data.json      # Mock response for community load-more requests
 |-- db/
