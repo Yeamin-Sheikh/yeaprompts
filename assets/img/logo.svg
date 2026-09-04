@@ -1,73 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
-    <!-- Background subtle gradient -->
+    <!-- Background Gradient matching dark theme -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#121829" />
-      <stop offset="100%" stop-color="#080C16" />
+      <stop offset="0%" stop-color="#0E1322" />
+      <stop offset="100%" stop-color="#060912" />
     </linearGradient>
 
-    <!-- Border highlight gradient -->
-    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.85" />
-      <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.45" />
-      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.25" />
+    <!-- Subtle Container Border Sheen -->
+    <linearGradient id="containerBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.65" />
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#D946EF" stop-opacity="0.55" />
     </linearGradient>
 
-    <!-- Main 'Y' Left Branch Gradient -->
-    <linearGradient id="yLeftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#C084FC" />
-      <stop offset="50%" stop-color="#8B5CF6" />
-      <stop offset="100%" stop-color="#6366F1" />
+    <!-- Saturated Neon Gradient (Electric Cyan -> Blue -> Neon Purple -> Vibrant Orchid) -->
+    <linearGradient id="neonYGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="26%" stop-color="#4F46E5" />
+      <stop offset="58%" stop-color="#8B5CF6" />
+      <stop offset="82%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#D946EF" />
     </linearGradient>
 
-    <!-- Main 'Y' Right & Stem Branch Gradient -->
-    <linearGradient id="yRightGrad" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#38BDF8" />
-      <stop offset="40%" stop-color="#818CF8" />
-      <stop offset="100%" stop-color="#A855F7" />
-    </linearGradient>
-
-    <!-- Glow Filter -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="14" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    <!-- Ambient Backlight Blur -->
+    <filter id="ambientDiffuse" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="38" result="blur" />
     </filter>
-    
-    <filter id="ambientGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="28" result="blur" />
+
+    <!-- Neon Glow Filter -->
+    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blurGlow" />
+      <feMerge>
+        <feMergeNode in="blurGlow" />
+        <feMergeNode in="blurGlow" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Inner Core Filament Glow -->
+    <filter id="coreGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="fGlow" />
+      <feMerge>
+        <feMergeNode in="fGlow" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
     </filter>
   </defs>
 
-  <!-- Base Rounded Container -->
-  <rect x="16" y="16" width="480" height="480" rx="120" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="5" />
+  <!-- Dark Rounded Squircle Base -->
+  <rect x="22" y="22" width="468" height="468" rx="114" fill="url(#bgGrad)" stroke="url(#containerBorder)" stroke-width="3" />
 
-  <!-- Inner Ambient Neon Backdrop Glow -->
-  <circle cx="256" cy="240" r="140" fill="#8B5CF6" opacity="0.22" filter="url(#ambientGlow)" />
-  <circle cx="320" cy="180" r="100" fill="#06B6D4" opacity="0.18" filter="url(#ambientGlow)" />
+  <!-- Ambient Neon Radial Backlight Illumination -->
+  <circle cx="190" cy="190" r="140" fill="#4F46E5" opacity="0.42" filter="url(#ambientDiffuse)" />
+  <circle cx="320" cy="180" r="130" fill="#D946EF" opacity="0.36" filter="url(#ambientDiffuse)" />
+  <circle cx="256" cy="340" r="120" fill="#8B5CF6" opacity="0.44" filter="url(#ambientDiffuse)" />
 
-  <!-- 'Y' Monogram Geometry -->
-  <g filter="url(#glow)">
-    <!-- Right branch down to stem (Continuous curve) -->
-    <path d="M 368 142 C 328 214 286 268 256 312 L 256 386" 
-          fill="none" 
-          stroke="url(#yRightGrad)" 
-          stroke-width="44" 
-          stroke-linecap="round" 
-          stroke-linejoin="round" />
+  <!-- Layer 1: Broad Neon Halo (Unified Single Path) -->
+  <path d="M 138 128 L 256 258 L 256 398 M 374 128 L 256 258"
+        fill="none" stroke="url(#neonYGrad)" stroke-width="96" stroke-linecap="round" stroke-linejoin="round"
+        opacity="0.45" filter="url(#ambientDiffuse)" />
 
-    <!-- Left branch joining the stem at center -->
-    <path d="M 144 142 C 184 214 226 268 256 312" 
-          fill="none" 
-          stroke="url(#yLeftGrad)" 
-          stroke-width="44" 
-          stroke-linecap="round" 
-          stroke-linejoin="round" />
+  <!-- Layer 2: Main Solid Neon Tube Body (Unified Single Path) -->
+  <path d="M 138 128 L 256 258 L 256 398 M 374 128 L 256 258"
+        fill="none" stroke="url(#neonYGrad)" stroke-width="78" stroke-linecap="round" stroke-linejoin="round"
+        filter="url(#neonGlow)" />
 
-    <!-- Neon Prompt Spark / Continuity Node at junction -->
-    <circle cx="256" cy="312" r="12" fill="#FFFFFF" />
-    <!-- Secondary prompt nodes on branch tips -->
-    <circle cx="144" cy="142" r="9" fill="#E9D5FF" />
-    <circle cx="368" cy="142" r="9" fill="#BAE6FD" />
-    <circle cx="256" cy="386" r="10" fill="#C084FC" />
+  <!-- Layer 3: Inner Fiber-Optic Neural Circuit Line (Unified Single Path) -->
+  <path d="M 138 128 L 256 258 L 256 398 M 374 128 L 256 258"
+        fill="none" stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"
+        opacity="0.95" filter="url(#coreGlow)" />
+
+  <!-- Layer 4: Pulse Nodes along the Neural Circuit -->
+  <g filter="url(#coreGlow)">
+    <!-- Top-Left Terminal Node -->
+    <circle cx="138" cy="128" r="7" fill="#FFFFFF" />
+    <circle cx="138" cy="128" r="12" fill="#00E5FF" opacity="0.65" />
+
+    <!-- Central Fusion Junction Node -->
+    <circle cx="256" cy="258" r="8.5" fill="#FFFFFF" />
+    <circle cx="256" cy="258" r="15" fill="#C084FC" opacity="0.75" />
+
+    <!-- Bottom Stem Terminal Node -->
+    <circle cx="256" cy="398" r="7" fill="#FFFFFF" />
+    <circle cx="256" cy="398" r="12" fill="#8B5CF6" opacity="0.65" />
+
+    <!-- Top-Right Terminal Node -->
+    <circle cx="374" cy="128" r="7" fill="#FFFFFF" />
+    <circle cx="374" cy="128" r="12" fill="#D946EF" opacity="0.65" />
   </g>
+
+  <!-- Layer 5: Subtle 3D Glass Surface Sheen Highlight -->
+  <path d="M 138 128 L 256 258 L 256 398 M 374 128 L 256 258"
+        fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.25" />
 </svg>
