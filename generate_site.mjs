@@ -168,11 +168,6 @@ const commonFooterHtml = (depth = '') => `
     </div>
     <p class="footer-copy">© 2026 YeaPrompts</p>
 </footer>
-<a href="https://wa.me/919131421048?text=Hi%21+I%27m+a+premium+member+of+your+YeaPrompts+community.+I+need+some+help."
-   target="_blank" rel="noopener" class="wa-float" title="WhatsApp Support">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.1 4.5.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.79h-.01a9.72 9.72 0 0 1-4.96-1.36l-.36-.21-3.69.97.98-3.6-.23-.37a9.72 9.72 0 0 1-1.49-5.18c0-5.37 4.37-9.74 9.75-9.74a9.68 9.68 0 0 1 6.89 2.86 9.68 9.68 0 0 1 2.85 6.89c0 5.38-4.37 9.74-9.73 9.74zm8.28-18.02A11.64 11.64 0 0 0 12.05.33C5.6.33.35 5.58.35 12.03c0 2.06.54 4.07 1.56 5.84L.25 23.79l6.07-1.59a11.68 11.68 0 0 0 5.72 1.46h.01c6.45 0 11.7-5.25 11.7-11.7 0-3.13-1.22-6.07-3.42-8.19z"/></svg>
-    <span class="wa-float-label">Support</span>
-</a>
 `;
 
 // ─── 1. Generate individual static prompt HTML files (prompts/{id}.html) ───
@@ -792,10 +787,49 @@ fs.writeFileSync('browse.html', browseHtml, 'utf8');
 console.log('Saved browse.html (modern interactive prompt browser).');
 
 // ─── 4. Generate index.html (Modern High-Converting Creator Landing Page) ───
-const p281 = prompts.find(p => p.id === 281);
-const sandboxPromptExcerpt = p281 ? p281.promptText : '';
 const curatedIds = [281, 280, 279, 278];
 const curatedPrompts = curatedIds.map(id => prompts.find(p => p.id === id)).filter(Boolean);
+
+// Terminal interactive deck prompts
+const terminalPromptsData = [
+  {
+    id: 279,
+    tabLabel: '#279 80s Fantasy',
+    title: 'Fake-Lost 1980s American Fantasy Comedy Episode',
+    thumbnail: 'uploads/3f566f82167873056e28bc52.png',
+    tags: ['80s Dark Fantasy', 'Seedance', '9:16 Vertical', 'Continuity Lock'],
+    excerpt: `# ULTRA-DETAILED REUSABLE MASTER PROMPT ENGINE V3
+## FAKE-LOST 1980s AMERICAN FANTASY COMEDY EPISODE SYSTEM
+### LOCKED UNIVERSE: SCARLET HAYES + GRIM GIBSON
+Primary subject: 1980s vintage film grain, high saturation practical monster effects, atmospheric haze, fixed camera tracking.`,
+    fullPrompt: (prompts.find(p => p.id === 279) || {}).promptText || ''
+  },
+  {
+    id: 281,
+    tabLabel: '#281 Goat ASMR',
+    title: '30-Second Raw iPhone Baby Goat Feeding Satisfaction',
+    thumbnail: 'uploads/926cf2e4733cbb24b7e059a2.png',
+    tags: ['Goat ASMR', 'Seedance 2.5', '9:16 Vertical', 'Sound FX'],
+    excerpt: `ULTRA-DETAILED REUSABLE MASTER PROMPT ENGINE
+30-SECOND RAW iPHONE MASS BABY-GOAT FEEDING SATISFACTION VIDEOS
+SEEDANCE 2.5 / HIGGSFIELD — COMPETITOR-INDEPENDENT SPECIFICATION
+Camera: 9:16 vertical handheld phone angle, macro milk bottle stream, natural ambient barn sound design.`,
+    fullPrompt: (prompts.find(p => p.id === 281) || {}).promptText || ''
+  },
+  {
+    id: 265,
+    tabLabel: '#265 3D Feature',
+    title: '30-Second Premium 3D Animated Pixar Viral Shorts',
+    thumbnail: 'uploads/ab4c9c83bff861ff9f0fed77.png',
+    tags: ['3D Feature', 'Kling AI', '9:16 Vertical', 'Cinematic'],
+    excerpt: `ULTRA-DETAILED REUSABLE MASTER PROMPT ENGINE
+30-SECOND PREMIUM 3D ANIMATED VIRAL SHORTS
+TIER-1 / HIGH-RPM AUDIENCE
+DEFAULT STYLE: ORIGINAL PIXAR + ILLUMINATION HYBRID
+Camera: Dynamic 3D tracking, subsurface scattering on skin and fur, cinematic vertical framing.`,
+    fullPrompt: (prompts.find(p => p.id === 265) || {}).promptText || ''
+  }
+];
 
 const curatedCardsHtml = curatedPrompts.map(p => `
         <article class="pcard">
@@ -855,106 +889,89 @@ ${commonHeaderHtml('')}
 
 <main>
 
-    <!-- 1. Hero Section -->
-    <section class="hero-section">
-        <div class="hero-pill-badge">
-            <span class="hero-pill-dot"></span>
-            279 Tested Prompts Online
-        </div>
-        <h1 class="hero-title">
-            Viral AI video prompts <span class="hero-title-gradient">engineered for massive reach</span>
-        </h1>
-        <p class="hero-sub">
-            Stop guessing video prompts. Copy tested master instructions calibrated for Seedance, Kling, and Veo. Ready to drop into your AI video generator.
-        </p>
-        <div class="hero-actions">
-            <a href="browse.html" class="hero-btn-primary">
-                Explore all prompts
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </a>
-            <a href="#sandbox" class="hero-btn-secondary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                Open live sandbox
-            </a>
-        </div>
-        <div class="hero-stats-row">
-            <div class="hero-stat-card">
-                <div class="hero-stat-num">279</div>
-                <div class="hero-stat-label">Curated prompts</div>
-            </div>
-            <div class="hero-stat-card">
-                <div class="hero-stat-num">3</div>
-                <div class="hero-stat-label">AI engines</div>
-            </div>
-            <div class="hero-stat-card">
-                <div class="hero-stat-num">100%</div>
-                <div class="hero-stat-label">Free access</div>
-            </div>
-            <div class="hero-stat-card">
-                <div class="hero-stat-num">1-Click</div>
-                <div class="hero-stat-label">Instant copy</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 2. Mandatory B11 Tagline Scroll Reveal Section -->
-    <section class="tagline-reveal-section">
-        <div class="tagline-lead">Built for high retention</div>
-        <div class="tagline-reveal-text">
-            ${taglineWordsHtml}
-        </div>
-    </section>
-
-    <!-- 3. Interactive Live Prompt Sandbox -->
-    <section class="sandbox-section" id="sandbox">
-        <div class="section-head">
-            <span class="section-badge">Interactive preview</span>
-            <h2 class="section-title">Test a master prompt</h2>
-            <p class="section-desc">Inspect how a full master prompt is structured with camera directions, motion physics, and cinematic lighting.</p>
-        </div>
-
-        <div class="sandbox-card">
-            <div class="sandbox-media">
-                <img src="${p281 ? p281.thumbnail : 'assets/img/cover.jpg'}" alt="${p281 ? escapeHtml(p281.title) : 'Demo'}" loading="lazy" decoding="async">
-                <span class="sandbox-media-badge">Prompt #${p281 ? p281.id : 281} Demo</span>
-            </div>
-            <div class="sandbox-details">
-                <div>
-                    <div class="sandbox-header-meta">
-                        <div class="sandbox-tags">
-                            <span class="sandbox-tag">Seedance</span>
-                            <span class="sandbox-tag">Kling</span>
-                            <span class="sandbox-tag">Veo</span>
-                            <span class="sandbox-tag">30s Format</span>
-                        </div>
-                        <span class="card-badge card-badge-free">Free</span>
-                    </div>
-                    <h3 class="sandbox-prompt-title">${p281 ? escapeHtml(p281.title) : ''}</h3>
+    <!-- 1. Creator Studio Split Hero Section -->
+    <section class="hero-studio-section">
+        <div class="hero-studio-grid">
+            <div class="hero-studio-content">
+                <div class="hero-eyebrow">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                    Prompt engineering studio
                 </div>
-
-                <div class="sandbox-code-wrap">
-                    <div class="sandbox-code-header">
-                        <span>Master Prompt Instructions</span>
-                        <span>Prompt #${p281 ? p281.id : 281}</span>
+                <h1 class="hero-studio-title">
+                    Master prompts for viral AI video.
+                </h1>
+                <p class="hero-studio-sub">
+                    Calibrated master instructions with cinematic camera physics, lighting setups, and character continuity. Built for Seedance, Kling, and Veo.
+                </p>
+                <form action="browse.html" method="GET" class="hero-search-form">
+                    <div class="hero-search-input-wrap">
+                        <span class="hero-search-icon">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </span>
+                        <input type="text" name="q" class="hero-search-input" placeholder="Search 279 prompts (e.g. 80s fantasy, ASMR, drone)..." autocomplete="off">
                     </div>
-                    <pre class="sandbox-code-box" id="sandbox-prompt-code"><code>${escapeHtml(sandboxPromptExcerpt)}</code></pre>
-                </div>
-
-                <div class="sandbox-actions">
-                    <button type="button" class="sandbox-copy-btn" id="sandbox-copy-btn">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                        Copy full master prompt
+                    <button type="submit" class="hero-search-btn">
+                        Search
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
-                    <a href="prompts/${p281 ? p281.id : 281}.html" class="sandbox-view-btn">
-                        View page
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                    </a>
+                </form>
+                <div class="hero-chips-row">
+                    <span class="hero-chips-label">Popular:</span>
+                    <a href="browse.html?q=fantasy" class="hero-chip">80s Fantasy</a>
+                    <a href="browse.html?q=asmr" class="hero-chip">ASMR &amp; Food</a>
+                    <a href="browse.html?q=3d" class="hero-chip">3D Animation</a>
+                    <a href="browse.html?q=seedance" class="hero-chip">Seedance 2.5</a>
+                    <a href="browse.html" class="hero-chip">All 279 Prompts &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Interactive Master Prompt Terminal Deck -->
+            <div class="hero-terminal-deck" id="hero-terminal-deck">
+                <div class="terminal-bar">
+                    <div class="terminal-dots">
+                        <span class="t-dot t-dot-red"></span>
+                        <span class="t-dot t-dot-yellow"></span>
+                        <span class="t-dot t-dot-green"></span>
+                    </div>
+                    <div class="terminal-tabs" role="tablist">
+                        ${terminalPromptsData.map((tp, idx) => `
+                        <button type="button" class="t-tab ${idx === 0 ? 'active' : ''}" data-index="${idx}" role="tab" aria-selected="${idx === 0}">
+                            ${escapeHtml(tp.tabLabel)}
+                        </button>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-preview-row">
+                        <div class="terminal-thumb-wrap">
+                            <img src="${terminalPromptsData[0].thumbnail}" id="terminal-thumb" class="terminal-thumb" alt="${escapeHtml(terminalPromptsData[0].title)}" loading="eager" width="80" height="106">
+                        </div>
+                        <div class="terminal-meta">
+                            <h3 class="terminal-prompt-title" id="terminal-title">${escapeHtml(terminalPromptsData[0].title)}</h3>
+                            <div class="terminal-tags" id="terminal-tags">
+                                ${terminalPromptsData[0].tags.map((tag, tIdx) => `<span class="t-tag ${tIdx === 0 ? 't-tag-accent' : ''}">${escapeHtml(tag)}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="terminal-code-wrap">
+                        <pre class="terminal-code" id="terminal-code"><code>${escapeHtml(terminalPromptsData[0].excerpt)}</code></pre>
+                    </div>
+                    <div class="terminal-footer">
+                        <button type="button" class="terminal-copy-btn" id="terminal-copy-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            <span id="terminal-copy-text">Copy Master Prompt</span>
+                        </button>
+                        <a href="prompts/${terminalPromptsData[0].id}.html" class="terminal-view-link" id="terminal-view-link">
+                            View prompt
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Curated Viral Prompts Grid (4 cards in 1 row) -->
+    <!-- 2. Curated Viral Prompts Grid (4 cards in 1 row) -->
     <section class="curated-section">
         <div class="section-head">
             <span class="section-badge">Curated selection</span>
@@ -971,6 +988,14 @@ ${commonHeaderHtml('')}
                 Browse all 279 prompts
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </a>
+        </div>
+    </section>
+
+    <!-- 3. Mandatory B11 Tagline Scroll Reveal Section -->
+    <section class="tagline-reveal-section">
+        <div class="tagline-lead">Built for high retention</div>
+        <div class="tagline-reveal-text">
+            ${taglineWordsHtml}
         </div>
     </section>
 
@@ -1075,6 +1100,104 @@ ${commonHeaderHtml('')}
 </main>
 
 ${commonFooterHtml('')}
+<script>
+(function() {
+    var promptsData = ${JSON.stringify(terminalPromptsData.map(p => ({
+        id: p.id,
+        title: p.title,
+        thumbnail: p.thumbnail,
+        tags: p.tags,
+        excerpt: p.excerpt,
+        fullPrompt: p.fullPrompt
+    })))};
+    var activeIdx = 0;
+    var tabs = document.querySelectorAll('.terminal-tabs .t-tab');
+    var thumbEl = document.getElementById('terminal-thumb');
+    var titleEl = document.getElementById('terminal-title');
+    var tagsEl = document.getElementById('terminal-tags');
+    var codeEl = document.getElementById('terminal-code');
+    var viewLinkEl = document.getElementById('terminal-view-link');
+    var copyBtn = document.getElementById('terminal-copy-btn');
+    var copyText = document.getElementById('terminal-copy-text');
+
+    function selectPrompt(idx) {
+        if (!promptsData[idx]) return;
+        activeIdx = idx;
+        var p = promptsData[idx];
+        tabs.forEach(function(tab, i) {
+            tab.classList.toggle('active', i === idx);
+            tab.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+        });
+        if (thumbEl) {
+            thumbEl.src = p.thumbnail;
+            thumbEl.alt = p.title;
+        }
+        if (titleEl) titleEl.textContent = p.title;
+        if (tagsEl) {
+            tagsEl.innerHTML = p.tags.map(function(t, i) {
+                return '<span class="t-tag ' + (i === 0 ? 't-tag-accent' : '') + '">' + t + '</span>';
+            }).join('');
+        }
+        if (codeEl) {
+            codeEl.innerHTML = '<code>' + p.excerpt.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</code>';
+        }
+        if (viewLinkEl) {
+            viewLinkEl.href = 'prompts/' + p.id + '.html';
+        }
+    }
+
+    tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            var idx = parseInt(this.getAttribute('data-index'), 10);
+            selectPrompt(idx);
+        });
+    });
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            var p = promptsData[activeIdx];
+            if (!p) return;
+            var textToCopy = p.fullPrompt || p.excerpt;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(textToCopy).then(function() {
+                    handleCopied();
+                }).catch(function() {
+                    fallbackCopy(textToCopy);
+                });
+            } else {
+                fallbackCopy(textToCopy);
+            }
+        });
+    }
+
+    function fallbackCopy(text) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+            document.execCommand('copy');
+            handleCopied();
+        } catch(e) {}
+        document.body.removeChild(ta);
+    }
+
+    function handleCopied() {
+        if (!copyBtn) return;
+        copyBtn.classList.add('copied');
+        if (copyText) copyText.textContent = 'Copied to Clipboard!';
+        if (window.showToast) {
+            window.showToast('Prompt #' + promptsData[activeIdx].id + ' copied!');
+        }
+        setTimeout(function() {
+            copyBtn.classList.remove('copied');
+            if (copyText) copyText.textContent = 'Copy Master Prompt';
+        }, 2200);
+    }
+})();
+</script>
 <script src="assets/js/main.js?v=7"></script>
 </body>
 </html>
