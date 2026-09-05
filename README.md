@@ -8,7 +8,7 @@ Browse prompts online: https://yeamin-sheikh.github.io/yeaprompts/browse.html
 
 ## Features
 
-- Redesigned high-converting creator landing page featuring live stats, interactive prompt sandbox, B11 tagline word reveal engine, curated 4-column cards, 3-step workflow, and creator FAQ.
+- Creator studio landing page with asymmetrical split hero, prompt search bar, quick filter chips, interactive prompt terminal deck with tab switching, 4-column curated grid, high-retention tagline reveal, 3-step workflow, and creator FAQ.
 - Fontem motion architecture: cubic bezier easing tokens, sub-300ms transitions, transform and opacity only, nested border radius formula.
 - All 279 prompts with full text, categories, updated dates, and storyboard reference images.
 - Dual theme engine supporting default dark mode and light mode with persistent local storage settings.
@@ -28,7 +28,7 @@ Browse prompts online: https://yeamin-sheikh.github.io/yeaprompts/browse.html
 
 ```text
 brave-hertz/
-|-- index.html                   # High-converting creator landing page
+|-- index.html                   # Creator studio landing page with live prompt terminal deck
 |-- browse.html                  # Catalog page with search, filters, and pagination
 |-- prompt.html                  # Dynamic prompt viewer (accepts ?id=X parameter)
 |-- community.html               # Social corner and community posts
