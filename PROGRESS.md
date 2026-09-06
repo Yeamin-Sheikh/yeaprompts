@@ -13,6 +13,31 @@
 
 ## Progress log
 
+### 2026-09-07, Universal 9:16 Vertical Aspect Ratio Conversion Across Full Catalog
+
+**Status:** Done
+
+#### What changed
+- Scanned entire repository dataset for any remaining 16:9 aspect ratio or horizontal storyboard instructions.
+- Converted 82 legacy prompts containing 149 remaining 16:9 references to 9:16 vertical orientation and vertical grid layouts.
+- Updated all individual prompt JSON records in data/prompts/, master dataset data/prompts.json, CSV export, and SQLite database.
+- Regenerated static site and confirmed zero 16:9 occurrences remain in the prompt library.
+
+#### Files touched
+- `data/prompts.json`: Converted all remaining 16:9 references to 9:16 vertical across 82 prompts.
+- `data/prompts/*.json`: Synchronized 82 individual prompt files.
+- `data/database.sqlite`: Updated prompt_text records and vacuumed database.
+- `data/prompts.csv`: Exported updated dataset.
+- `prompts/*.html`: Rebuilt static prompt pages.
+
+#### Issues found
+- None. Conversion resulted in zero remaining 16:9 references across all 289 prompts.
+
+#### Next steps
+- Push latest commit to GitHub.
+
+---
+
 ### 2026-09-07, Live Catalog Synchronization, Prompts 282 Through 291
 
 **Status:** Done
