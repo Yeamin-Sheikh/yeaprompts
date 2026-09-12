@@ -101,9 +101,9 @@ for (const img of testImages) {
 }
 
 // 4. Test All Prompts Integrity on disk
-await test('All 307 static prompt files exist on disk with valid structure', async () => {
+await test('All 316 static prompt files exist on disk with valid structure', async () => {
   const files = fs.readdirSync('prompts').filter(f => f.endsWith('.html'));
-  assert(files.length === 307, `Expected 307 files, found ${files.length}`);
+  assert(files.length === 316, `Expected 316 files, found ${files.length}`);
   
   for (const f of files) {
     const content = fs.readFileSync(path.join('prompts', f), 'utf8');
@@ -119,7 +119,7 @@ await test('Zero broken internal href/src links across all HTML files', async ()
   const rootFiles = fs.readdirSync('.').filter(f => f.endsWith('.html'));
   const promptFiles = fs.readdirSync('prompts').filter(f => f.endsWith('.html')).map(f => 'prompts/' + f);
   const allHtml = [...rootFiles, ...promptFiles];
-  assert(allHtml.length >= 316, `Expected at least 316 HTML files, found ${allHtml.length}`);
+  assert(allHtml.length >= 325, `Expected at least 325 HTML files, found ${allHtml.length}`);
 
   let broken = [];
   for (const file of allHtml) {
@@ -203,9 +203,9 @@ await test('All images referenced in data/prompts.json exist on disk with valid 
 });
 
 // 8. Test Prompt Content Integrity in data/prompts.json
-await test('All 307 prompts in prompts.json have full text, title, and valid categories', async () => {
+await test('All 316 prompts in prompts.json have full text, title, and valid categories', async () => {
   const prompts = JSON.parse(fs.readFileSync('data/prompts.json', 'utf8'));
-  assert(prompts.length === 307, `Expected 307 items in json, found ${prompts.length}`);
+  assert(prompts.length === 316, `Expected 316 items in json, found ${prompts.length}`);
   for (const p of prompts) {
     assert(p.promptText && p.promptText.length > 50, `Prompt ${p.id} has insufficient text length`);
     assert(p.title && p.title.length > 0, `Prompt ${p.id} has empty title`);
@@ -219,8 +219,8 @@ await test('browse.html contains full search index, General category pill, and I
   assert(html.includes('window.ALL_PROMPTS ='), 'Missing window.ALL_PROMPTS in browse.html');
   assert(html.includes('id="prompts-grid"'), 'Missing prompts-grid in browse.html');
   assert(html.includes('id="pagination"'), 'Missing pagination in browse.html');
-  assert(html.includes('General (90)'), 'Missing General (90) category pill');
-  assert(html.includes('Tools &amp; Tutorials (3)') || html.includes('Tools & Tutorials (3)'), 'Missing Tools & Tutorials pill');
+  assert(html.includes('General (97)'), 'Missing General (97) category pill');
+  assert(html.includes('Tools &amp; Tutorials (4)') || html.includes('Tools & Tutorials (4)'), 'Missing Tools & Tutorials pill');
   assert(html.includes('Animal &amp; Pets (40)') || html.includes('Animal & Pets (40)'), 'Missing Animal & Pets pill');
   assert(html.includes('matchesId'), 'Missing prompt ID search support');
   assert(html.includes('updatePillsUI'), 'Missing pill UI synchronization on load');
@@ -241,22 +241,22 @@ await test('data/database.sqlite exists and contains all prompts, categories, an
   assert(fs.existsSync('data/database.sqlite'), 'data/database.sqlite does not exist');
   const dbModule = await import('./db/index.js');
   const stats = dbModule.getStats();
-  assert(stats.totalPrompts === 307, `Expected 307 prompts in DB, got ${stats.totalPrompts}`);
+  assert(stats.totalPrompts === 316, `Expected 316 prompts in DB, got ${stats.totalPrompts}`);
   assert(stats.totalCategories === 14, `Expected 14 categories in DB, got ${stats.totalCategories}`);
-  assert(stats.totalMedia >= 307, `Expected at least 307 media records, got ${stats.totalMedia}`);
+  assert(stats.totalMedia >= 383, `Expected at least 383 media records, got ${stats.totalMedia}`);
   assert(stats.totalChars > 5000000, `Expected >5M characters, got ${stats.totalChars}`);
 });
 
 // 12. Test REST API Endpoints backed by SQLite
 await test('REST API endpoints /api/stats, /api/categories, /api/prompts, and /api/prompts/18', async () => {
   const statsRes = await (await fetch(`${BASE_URL}/api/stats`)).json();
-  assert(statsRes.totalPrompts === 307, 'API /api/stats totalPrompts is not 307');
+  assert(statsRes.totalPrompts === 316, 'API /api/stats totalPrompts is not 316');
 
   const catsRes = await (await fetch(`${BASE_URL}/api/categories`)).json();
   assert(Array.isArray(catsRes) && catsRes.length === 14, 'API /api/categories did not return 14 categories');
 
   const promptsRes = await (await fetch(`${BASE_URL}/api/prompts?limit=5`)).json();
-  assert(promptsRes.totalItems === 307, 'API /api/prompts totalItems is not 307');
+  assert(promptsRes.totalItems === 316, 'API /api/prompts totalItems is not 316');
   assert(promptsRes.items.length === 5, 'API /api/prompts items length is not 5');
 
   const p18Res = await (await fetch(`${BASE_URL}/api/prompts/18`)).json();
@@ -265,7 +265,7 @@ await test('REST API endpoints /api/stats, /api/categories, /api/prompts, and /a
 });
 
 // 13. Test CSV Export
-await test('data/prompts.csv exists and contains 307 exported prompt records', async () => {
+await test('data/prompts.csv exists and contains 316 exported prompt records', async () => {
   assert(fs.existsSync('data/prompts.csv'), 'data/prompts.csv does not exist');
   const csvContent = fs.readFileSync('data/prompts.csv', 'utf8').trim();
   assert(csvContent.startsWith('id,title,category'), 'CSV header is invalid');
@@ -282,8 +282,8 @@ await test('data/prompts.csv exists and contains 307 exported prompt records', a
       rowCount++;
     }
   }
-  // rowCount counts the header row + 307 prompt records = 307 boundaries
-  assert(rowCount === 307, `Expected 307 data rows in CSV, got ${rowCount}`);
+  // rowCount counts the header row + 316 prompt records = 316 boundaries
+  assert(rowCount === 316, `Expected 316 data rows in CSV, got ${rowCount}`);
 });
 
 // 14. Test Database Repository Modules
