@@ -1,6 +1,6 @@
 # YeaPrompts
 
-A complete replica and prompt library for YeaPrompts. All 316 prompt pages, master prompt instructions, and 450 media assets are stored and accessible both online and offline.
+A complete replica and prompt library for YeaPrompts. All 319 prompt pages, master prompt instructions, and 458 media assets are stored and accessible both online and offline.
 
 Live online site: https://yeamin-sheikh.github.io/yeaprompts/
 
@@ -10,16 +10,16 @@ Browse prompts online: https://yeamin-sheikh.github.io/yeaprompts/browse.html
 
 - Creator studio landing page with asymmetrical split hero, prompt search bar, quick filter chips, interactive prompt terminal deck with tab switching, 4-column curated grid, high-retention tagline reveal, 3-step workflow, and creator FAQ.
 - Fontem motion architecture: cubic bezier easing tokens, sub-300ms transitions, transform and opacity only, nested border radius formula.
-- All 316 prompts with full text, categories, updated dates, and storyboard reference images.
+- All 319 prompts with full text, categories, updated dates, and storyboard reference images.
 - Dual theme engine supporting default dark mode and light mode with persistent local storage settings.
 - Instant live search with debounced filtering across prompt IDs, for example #18, titles, and categories.
 - Four-column responsive grid with subtle non-washing hover overlays, instant one-click clipboard copying, and direct prompt navigation.
 - Sequential prompt navigation across all static pages with previous and next buttons and keyboard shortcuts.
 - Keyboard controls: forward slash to focus search, escape to dismiss modals, left and right arrow keys to navigate prompts.
 - Storyboard and reference asset viewer with image zoom lightbox and direct download actions.
-- Individual static pages for all 316 prompts with word count, character count, and one-click clipboard copying.
+- Individual static pages for all 319 prompts with word count, character count, and one-click clipboard copying.
 - Replicated pages for home, community feed, pricing, contact, privacy policy, terms of service, and refund policy.
-- Zero external image dependencies. All 450 thumbnail and storyboard images and 5 site assets are stored locally.
+- Zero external image dependencies. All 458 thumbnail and storyboard images and 5 site assets are stored locally.
 - All JSON databases and static pages normalized to use local paths, with zero external soniprompts.com requests.
 - Dual server support with zero third-party dependencies, Node.js HTTP server and Python 3 HTTP server.
 - Direct file mode. Open browse.html or index.html directly in any browser without running a server.
